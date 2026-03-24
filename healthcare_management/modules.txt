@@ -1,0 +1,6 @@
+HMS Core
+HMS Clinical
+HMS LIS
+HMS Pharmacy
+HMS Revenue
+HMS Portal

@@ -43,7 +43,7 @@ document.getElementById('appointment-form').addEventListener('submit', async fun
     const data = Object.fromEntries(new FormData(this));
     try {
         const response = await frappe.call({
-            method: 'hms_portal.hms_portal.api.portal.book_appointment',
+            method: 'healthcare_management.hms_portal.api.portal.book_appointment',
             args: data,
         });
         frappe.msgprint('Appointment booked successfully!');
