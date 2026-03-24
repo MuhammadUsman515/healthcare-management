@@ -1,0 +1,136 @@
+{
+  "name": "Prescription",
+  "module": "Healthcare",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-RX-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "patient",
+      "fieldtype": "Link",
+      "label": "Patient",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "fieldtype": "Data",
+      "label": "Patient Name",
+      "fetch_from": "patient.full_name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "practitioner",
+      "fieldtype": "Link",
+      "label": "Prescribing Practitioner",
+      "options": "Practitioner",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "prescription_date",
+      "fieldtype": "Date",
+      "label": "Prescription Date",
+      "reqd": 1,
+      "default": "Today",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_medication",
+      "fieldtype": "Section Break",
+      "label": "Medication Details"
+    },
+    {
+      "fieldname": "drug_name",
+      "fieldtype": "Data",
+      "label": "Drug Name",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "dosage",
+      "fieldtype": "Data",
+      "label": "Dosage",
+      "reqd": 1
+    },
+    {
+      "fieldname": "dosage_form",
+      "fieldtype": "Select",
+      "label": "Dosage Form",
+      "options": "\nTablet\nCapsule\nSyrup\nInjection\nCream\nOintment\nDrops\nInhaler\nOther"
+    },
+    {
+      "fieldname": "column_break_med",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "frequency",
+      "fieldtype": "Select",
+      "label": "Frequency",
+      "options": "\nOnce a day\nTwice a day\nThree times a day\nFour times a day\nEvery 6 hours\nEvery 8 hours\nEvery 12 hours\nAs needed\nAt bedtime"
+    },
+    {
+      "fieldname": "duration",
+      "fieldtype": "Int",
+      "label": "Duration (days)"
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "label": "Quantity"
+    },
+    {
+      "fieldname": "section_instructions",
+      "fieldtype": "Section Break",
+      "label": "Instructions"
+    },
+    {
+      "fieldname": "instructions",
+      "fieldtype": "Small Text",
+      "label": "Instructions"
+    },
+    {
+      "fieldname": "diagnosis",
+      "fieldtype": "Small Text",
+      "label": "Diagnosis"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Healthcare Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1,
+      "delete": 1
+    },
+    {
+      "role": "Physician",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1
+    }
+  ],
+  "search_fields": "patient_name, drug_name, prescription_date",
+  "title_field": "patient_name",
+  "sort_field": "prescription_date",
+  "sort_order": "DESC"
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Lab Test",
+  "module": "Healthcare",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-LAB-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "patient",
+      "fieldtype": "Link",
+      "label": "Patient",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "fieldtype": "Data",
+      "label": "Patient Name",
+      "fetch_from": "patient.full_name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "practitioner",
+      "fieldtype": "Link",
+      "label": "Referring Practitioner",
+      "options": "Practitioner",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "test_date",
+      "fieldtype": "Date",
+      "label": "Test Date",
+      "reqd": 1,
+      "default": "Today",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_test",
+      "fieldtype": "Section Break",
+      "label": "Test Details"
+    },
+    {
+      "fieldname": "test_name",
+      "fieldtype": "Data",
+      "label": "Test Name",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "test_group",
+      "fieldtype": "Select",
+      "label": "Test Group",
+      "options": "\nHematology\nBiochemistry\nMicrobiology\nPathology\nRadiology\nCardiology\nOther",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "column_break_test",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Ordered\nSample Collected\nIn Progress\nCompleted\nCancelled",
+      "default": "Ordered",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Select",
+      "label": "Priority",
+      "options": "Normal\nUrgent\nEmergency",
+      "default": "Normal"
+    },
+    {
+      "fieldname": "section_results",
+      "fieldtype": "Section Break",
+      "label": "Results"
+    },
+    {
+      "fieldname": "result_value",
+      "fieldtype": "Data",
+      "label": "Result Value"
+    },
+    {
+      "fieldname": "normal_range",
+      "fieldtype": "Data",
+      "label": "Normal Range"
+    },
+    {
+      "fieldname": "result_status",
+      "fieldtype": "Select",
+      "label": "Result Status",
+      "options": "\nNormal\nAbnormal\nCritical"
+    },
+    {
+      "fieldname": "column_break_results",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "result_date",
+      "fieldtype": "Date",
+      "label": "Result Date"
+    },
+    {
+      "fieldname": "result_comment",
+      "fieldtype": "Text",
+      "label": "Result Comment"
+    },
+    {
+      "fieldname": "section_sample",
+      "fieldtype": "Section Break",
+      "label": "Sample"
+    },
+    {
+      "fieldname": "sample_type",
+      "fieldtype": "Select",
+      "label": "Sample Type",
+      "options": "\nBlood\nUrine\nStool\nSputum\nSwab\nTissue\nOther"
+    },
+    {
+      "fieldname": "sample_collection_date",
+      "fieldtype": "Datetime",
+      "label": "Sample Collection Date"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Healthcare Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1,
+      "delete": 1
+    },
+    {
+      "role": "Physician",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1
+    }
+  ],
+  "search_fields": "patient_name, test_name, status",
+  "title_field": "test_name",
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

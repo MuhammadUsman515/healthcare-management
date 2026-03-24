@@ -1,0 +1,47 @@
+{
+  "name": "Medical Department",
+  "module": "Healthcare",
+  "doctype": "DocType",
+  "naming_rule": "Set by user",
+  "engine": "InnoDB",
+  "is_submittable": 0,
+  "quick_entry": 1,
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "department_name",
+      "fieldtype": "Data",
+      "label": "Department Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active",
+      "default": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Healthcare Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Physician",
+      "read": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

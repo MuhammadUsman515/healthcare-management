@@ -1,0 +1,143 @@
+{
+  "name": "Patient",
+  "module": "Healthcare",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-PAT-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 0,
+  "allow_rename": 1,
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "first_name",
+      "fieldtype": "Data",
+      "label": "First Name",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "last_name",
+      "fieldtype": "Data",
+      "label": "Last Name",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "full_name",
+      "fieldtype": "Data",
+      "label": "Full Name",
+      "read_only": 1,
+      "in_list_view": 1,
+      "bold": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "gender",
+      "fieldtype": "Link",
+      "label": "Gender",
+      "options": "Gender",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "dob",
+      "fieldtype": "Date",
+      "label": "Date of Birth"
+    },
+    {
+      "fieldname": "blood_group",
+      "fieldtype": "Select",
+      "label": "Blood Group",
+      "options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nDisabled\nDeceased",
+      "default": "Active",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_contact",
+      "fieldtype": "Section Break",
+      "label": "Contact Details"
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "options": "Email"
+    },
+    {
+      "fieldname": "mobile",
+      "fieldtype": "Data",
+      "label": "Mobile",
+      "options": "Phone"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Phone",
+      "options": "Phone"
+    },
+    {
+      "fieldname": "column_break_contact",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "address",
+      "fieldtype": "Small Text",
+      "label": "Address"
+    },
+    {
+      "fieldname": "city",
+      "fieldtype": "Data",
+      "label": "City"
+    },
+    {
+      "fieldname": "section_medical",
+      "fieldtype": "Section Break",
+      "label": "Medical History"
+    },
+    {
+      "fieldname": "allergies",
+      "fieldtype": "Small Text",
+      "label": "Allergies"
+    },
+    {
+      "fieldname": "medication",
+      "fieldtype": "Small Text",
+      "label": "Current Medication"
+    },
+    {
+      "fieldname": "medical_history",
+      "fieldtype": "Text",
+      "label": "Medical History"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Healthcare Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Physician",
+      "read": 1,
+      "write": 1
+    }
+  ],
+  "search_fields": "full_name, mobile, email",
+  "title_field": "full_name",
+  "image_field": "",
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

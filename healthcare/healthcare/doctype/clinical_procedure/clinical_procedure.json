@@ -1,0 +1,145 @@
+{
+  "name": "Clinical Procedure",
+  "module": "Healthcare",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-CPR-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "patient",
+      "fieldtype": "Link",
+      "label": "Patient",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "fieldtype": "Data",
+      "label": "Patient Name",
+      "fetch_from": "patient.full_name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "practitioner",
+      "fieldtype": "Link",
+      "label": "Practitioner",
+      "options": "Practitioner",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Medical Department"
+    },
+    {
+      "fieldname": "section_procedure",
+      "fieldtype": "Section Break",
+      "label": "Procedure Details"
+    },
+    {
+      "fieldname": "procedure_name",
+      "fieldtype": "Data",
+      "label": "Procedure Name",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "procedure_date",
+      "fieldtype": "Date",
+      "label": "Procedure Date",
+      "reqd": 1,
+      "default": "Today",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_proc",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Planned\nIn Progress\nCompleted\nCancelled",
+      "default": "Planned",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "procedure_type",
+      "fieldtype": "Select",
+      "label": "Procedure Type",
+      "options": "\nMinor\nMajor\nDiagnostic\nTherapeutic"
+    },
+    {
+      "fieldname": "section_clinical",
+      "fieldtype": "Section Break",
+      "label": "Clinical Details"
+    },
+    {
+      "fieldname": "diagnosis",
+      "fieldtype": "Small Text",
+      "label": "Diagnosis"
+    },
+    {
+      "fieldname": "procedure_description",
+      "fieldtype": "Text",
+      "label": "Procedure Description"
+    },
+    {
+      "fieldname": "section_outcome",
+      "fieldtype": "Section Break",
+      "label": "Outcome"
+    },
+    {
+      "fieldname": "outcome",
+      "fieldtype": "Select",
+      "label": "Outcome",
+      "options": "\nSuccessful\nPartially Successful\nUnsuccessful\nComplications"
+    },
+    {
+      "fieldname": "complications",
+      "fieldtype": "Text",
+      "label": "Complications"
+    },
+    {
+      "fieldname": "follow_up_notes",
+      "fieldtype": "Text",
+      "label": "Follow Up Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Healthcare Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1,
+      "delete": 1
+    },
+    {
+      "role": "Physician",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1
+    }
+  ],
+  "search_fields": "patient_name, procedure_name, status",
+  "title_field": "procedure_name",
+  "sort_field": "procedure_date",
+  "sort_order": "DESC"
+}
