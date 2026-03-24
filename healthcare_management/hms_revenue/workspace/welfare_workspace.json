@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Welfare",
   "icon": "heart",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 10,
   "roles": ["Welfare Officer", "Welfare Committee"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Welfare Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient Welfare Case\",\"label\":\"Welfare Cases\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Donation Receipt\",\"label\":\"Donations\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Donation Fund\",\"label\":\"Funds\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Welfare Approval Decision\",\"label\":\"Approvals\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Fund Utilization Certificate\",\"label\":\"Utilization\",\"type\":\"DocType\"}}]"
 }

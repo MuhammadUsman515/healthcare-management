@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Reception",
   "icon": "health",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 3,
   "roles": ["Nurse", "Healthcare Administrator"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Reception Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"New Patient\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Check In\",\"label\":\"Check In\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Visit\",\"label\":\"Visits\",\"type\":\"DocType\"}}]",
   "number_cards": [

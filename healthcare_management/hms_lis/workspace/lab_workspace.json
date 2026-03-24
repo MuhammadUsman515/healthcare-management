@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Laboratory",
   "icon": "flask",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 6,
   "roles": ["Lab Technician", "Lab Supervisor"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Laboratory Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Order\",\"label\":\"Lab Orders\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Sample Collection\",\"label\":\"Sample Collection\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Test\",\"label\":\"Lab Tests\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Result Authorization\",\"label\":\"Authorize Results\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Test Template\",\"label\":\"Test Templates\",\"type\":\"DocType\"}}]"
 }

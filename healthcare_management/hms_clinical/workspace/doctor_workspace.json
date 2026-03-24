@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Doctor Panel",
   "icon": "heart",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 4,
   "roles": ["Physician"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Doctor Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"My Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Encounter\",\"label\":\"Encounters\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Prescription\",\"label\":\"Prescriptions\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Order\",\"label\":\"Lab Orders\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"My Inpatients\",\"type\":\"DocType\"}}]"
 }

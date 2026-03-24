@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Cashier",
   "icon": "dollar-sign",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 8,
   "roles": ["Cashier"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Cashier Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Final Bill\",\"label\":\"Bills\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Cashier Receipt\",\"label\":\"Receipts\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Payment Entry\",\"label\":\"Payments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Deposit\",\"label\":\"Deposits\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Refund\",\"label\":\"Refunds\",\"type\":\"DocType\"}}]"
 }

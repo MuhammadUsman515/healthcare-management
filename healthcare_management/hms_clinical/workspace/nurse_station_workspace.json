@@ -4,7 +4,9 @@
   "doctype": "Workspace",
   "label": "Nurse Station",
   "icon": "clipboard",
+  "public": 1,
   "is_standard": 1,
+  "sequence_id": 5,
   "roles": ["Nurse"],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Nurse Station\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Nursing Task\",\"label\":\"My Tasks\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Medication Administration Record\",\"label\":\"Medication Admin\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Vital Signs\",\"label\":\"Vital Signs\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"Active Admissions\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Bed\",\"label\":\"Bed Status\",\"type\":\"DocType\"}}]"
 }
