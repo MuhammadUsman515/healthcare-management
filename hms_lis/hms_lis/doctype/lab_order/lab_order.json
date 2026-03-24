@@ -1,0 +1,38 @@
+{
+  "name": "Lab Order",
+  "module": "HMS LIS",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-LO-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "encounter", "fieldtype": "Link", "label": "Encounter", "options": "Encounter"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "ordering_practitioner", "fieldtype": "Link", "label": "Ordering Practitioner", "options": "Practitioner", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "order_date", "fieldtype": "Datetime", "label": "Order Date", "reqd": 1, "default": "Now", "in_list_view": 1},
+    {"fieldname": "priority", "fieldtype": "Select", "label": "Priority", "options": "Normal\nUrgent\nSTAT", "default": "Normal", "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Ordered\nSample Pending\nCollected\nIn Process\nResult Entered\nVerified\nAuthorized\nReleased\nCancelled", "default": "Ordered", "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "section_items", "fieldtype": "Section Break", "label": "Tests Ordered"},
+    {"fieldname": "items", "fieldtype": "Table", "label": "Lab Order Items", "options": "Lab Order Item"},
+    {"fieldname": "section_clinical", "fieldtype": "Section Break", "label": "Clinical Information"},
+    {"fieldname": "clinical_notes", "fieldtype": "Small Text", "label": "Clinical Notes"},
+    {"fieldname": "provisional_diagnosis", "fieldtype": "Data", "label": "Provisional Diagnosis"},
+    {"fieldname": "fasting", "fieldtype": "Check", "label": "Fasting Required"},
+    {"fieldname": "section_insurance", "fieldtype": "Section Break", "label": "Insurance"},
+    {"fieldname": "insurance_provider", "fieldtype": "Link", "label": "Insurance", "options": "Insurance Provider"},
+    {"fieldname": "authorization_number", "fieldtype": "Data", "label": "Authorization Number"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+    {"role": "Physician", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Lab Technician", "read": 1, "write": 1},
+    {"role": "Lab Supervisor", "read": 1, "write": 1}
+  ],
+  "search_fields": "patient_name, order_date, status",
+  "title_field": "patient_name",
+  "sort_field": "order_date", "sort_order": "DESC"
+}

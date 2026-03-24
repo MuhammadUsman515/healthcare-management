@@ -1,0 +1,38 @@
+{
+  "name": "POS Invoice",
+  "module": "HMS Pharmacy",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "POS-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "in_list_view": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1},
+    {"fieldname": "customer_name", "fieldtype": "Data", "label": "Customer Name"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "posting_date", "fieldtype": "Date", "label": "Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+    {"fieldname": "posting_time", "fieldtype": "Time", "label": "Time", "default": "Now"},
+    {"fieldname": "dispense_slip", "fieldtype": "Link", "label": "Dispense Slip", "options": "Dispense Slip"},
+    {"fieldname": "counter_shift", "fieldtype": "Link", "label": "Counter Shift", "options": "Counter Shift"},
+    {"fieldname": "section_items", "fieldtype": "Section Break", "label": "Items"},
+    {"fieldname": "items", "fieldtype": "Table", "label": "Items", "options": "POS Invoice Item"},
+    {"fieldname": "section_totals", "fieldtype": "Section Break", "label": "Totals"},
+    {"fieldname": "total_amount", "fieldtype": "Currency", "label": "Total", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "discount_amount", "fieldtype": "Currency", "label": "Discount"},
+    {"fieldname": "tax_amount", "fieldtype": "Currency", "label": "Tax"},
+    {"fieldname": "grand_total", "fieldtype": "Currency", "label": "Grand Total", "read_only": 1, "bold": 1, "in_list_view": 1},
+    {"fieldname": "column_break_totals", "fieldtype": "Column Break"},
+    {"fieldname": "payment_mode", "fieldtype": "Select", "label": "Payment Mode", "options": "Cash\nCard\nOnline\nInsurance\nSplit", "default": "Cash", "in_list_view": 1},
+    {"fieldname": "amount_paid", "fieldtype": "Currency", "label": "Amount Paid"},
+    {"fieldname": "change_amount", "fieldtype": "Currency", "label": "Change", "read_only": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nPaid\nPartially Paid\nRefunded\nCancelled", "default": "Draft", "in_list_view": 1}
+  ],
+  "permissions": [
+    {"role": "Pharmacist", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Cashier", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1}
+  ],
+  "sort_field": "posting_date", "sort_order": "DESC"
+}

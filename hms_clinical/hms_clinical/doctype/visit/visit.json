@@ -1,0 +1,23 @@
+{
+  "name": "Visit",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-VIS-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "visit_date", "fieldtype": "Date", "label": "Visit Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "visit_type", "fieldtype": "Select", "label": "Visit Type", "options": "OPD\nIPD\nEmergency\nDay Care", "default": "OPD", "in_list_view": 1},
+    {"fieldname": "department", "fieldtype": "Link", "label": "Department", "options": "Department"},
+    {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Hospital Branch"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nCompleted\nCancelled", "default": "Active", "in_list_view": 1}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Nurse", "read": 1, "write": 1, "create": 1}
+  ],
+  "sort_field": "visit_date", "sort_order": "DESC", "title_field": "patient_name"
+}

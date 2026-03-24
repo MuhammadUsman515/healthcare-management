@@ -1,0 +1,65 @@
+{% extends "templates/web.html" %}
+{% block title %}Donate{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>Support Healthcare for the Needy</h2>
+    <p class="lead">Your contribution helps provide medical care to those who cannot afford it.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Zakat Fund</h5>
+                    <p>For eligible patients under Zakat guidelines.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Sadaqah Fund</h5>
+                    <p>General charitable contributions for medical aid.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Specific Treatment Fund</h5>
+                    <p>Fund specific surgeries or treatments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="donation-form" class="mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" name="donor_name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Phone</label>
+                    <input type="tel" class="form-control" name="phone">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label>Amount (PKR)</label>
+                    <input type="number" class="form-control" name="amount" required min="1">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Type</label>
+                    <select class="form-control" name="donation_type">
+                        <option value="Zakat">Zakat</option>
+                        <option value="Sadaqah">Sadaqah</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg">Donate Now</button>
+    </form>
+</div>
+{% endblock %}

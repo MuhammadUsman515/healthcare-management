@@ -1,0 +1,10 @@
+{
+  "name": "Pharmacy Dispense Console",
+  "module": "HMS Pharmacy",
+  "doctype": "Page",
+  "page_name": "pharmacy-dispense-console",
+  "title": "Dispense Console",
+  "icon": "pill",
+  "standard": "Yes",
+  "roles": [{"role": "Pharmacist"}, {"role": "Healthcare Administrator"}]
+}

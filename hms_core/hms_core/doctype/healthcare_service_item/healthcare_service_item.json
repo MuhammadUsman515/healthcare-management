@@ -1,0 +1,32 @@
+{
+  "name": "Healthcare Service Item",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "naming_series:",
+  "engine": "InnoDB",
+  "is_submittable": 0,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "label": "Naming Series", "options": "HSI-.####"},
+    {"fieldname": "item_name", "fieldtype": "Data", "label": "Item Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "item_group", "fieldtype": "Link", "label": "Item Group", "options": "Item Group", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "item_type", "fieldtype": "Select", "label": "Item Type", "options": "Consultation\nProcedure\nLab Test\nRadiology\nRoom Charge\nNursing\nPharmacy\nPackage\nOther", "in_standard_filter": 1},
+    {"fieldname": "uom", "fieldtype": "Link", "label": "UOM", "options": "UOM", "default": "Nos"},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1},
+    {"fieldname": "section_pricing", "fieldtype": "Section Break", "label": "Pricing"},
+    {"fieldname": "standard_rate", "fieldtype": "Currency", "label": "Standard Rate", "in_list_view": 1},
+    {"fieldname": "price_list", "fieldtype": "Link", "label": "Price List", "options": "Price List"},
+    {"fieldname": "column_break_price", "fieldtype": "Column Break"},
+    {"fieldname": "tax_template", "fieldtype": "Link", "label": "Tax Template", "options": "Tax Template"},
+    {"fieldname": "is_billable", "fieldtype": "Check", "label": "Is Billable", "default": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "item_name"
+}

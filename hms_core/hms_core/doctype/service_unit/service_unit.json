@@ -1,0 +1,28 @@
+{
+  "name": "Service Unit",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "naming_series:",
+  "engine": "InnoDB",
+  "is_submittable": 0,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "label": "Naming Series", "options": "SU-.####"},
+    {"fieldname": "service_unit_name", "fieldtype": "Data", "label": "Service Unit Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+    {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Hospital Branch"},
+    {"fieldname": "department", "fieldtype": "Link", "label": "Department", "options": "Department"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "service_unit_type", "fieldtype": "Select", "label": "Type", "options": "OPD Room\nIPD Ward\nICU\nOT\nLab\nPharmacy\nRadiology\nEmergency\nOther"},
+    {"fieldname": "occupancy_status", "fieldtype": "Select", "label": "Occupancy", "options": "Available\nOccupied\nMaintenance\nReserved", "default": "Available", "in_list_view": 1},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1},
+    {"fieldname": "capacity", "fieldtype": "Int", "label": "Capacity"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "service_unit_name"
+}

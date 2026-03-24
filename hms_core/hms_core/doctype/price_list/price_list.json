@@ -1,0 +1,15 @@
+{
+  "name": "Price List",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Set by user",
+  "engine": "InnoDB",
+  "quick_entry": 1,
+  "fields": [
+    {"fieldname": "price_list_name", "fieldtype": "Data", "label": "Price List Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "currency", "fieldtype": "Data", "label": "Currency", "default": "PKR", "reqd": 1},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1, "in_list_view": 1}
+  ],
+  "permissions": [{"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}],
+  "sort_field": "modified", "sort_order": "DESC"
+}

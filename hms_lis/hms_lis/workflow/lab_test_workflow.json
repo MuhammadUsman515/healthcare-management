@@ -1,0 +1,26 @@
+{
+  "name": "Lab Test Workflow",
+  "doctype": "Workflow",
+  "document_type": "Lab Test",
+  "is_active": 1,
+  "states": [
+    {"state": "Ordered", "allow_edit": "Lab Technician", "doc_status": 0},
+    {"state": "Sample Collected", "allow_edit": "Lab Technician", "doc_status": 0},
+    {"state": "In Process", "allow_edit": "Lab Technician", "doc_status": 0},
+    {"state": "Result Entered", "allow_edit": "Lab Technician", "doc_status": 0},
+    {"state": "Verified", "allow_edit": "Lab Supervisor", "doc_status": 0},
+    {"state": "Authorized", "allow_edit": "Lab Supervisor", "doc_status": 1},
+    {"state": "Released", "allow_edit": "Lab Supervisor", "doc_status": 1},
+    {"state": "Cancelled", "allow_edit": "Healthcare Administrator", "doc_status": 2},
+    {"state": "Outsourced", "allow_edit": "Lab Supervisor", "doc_status": 0}
+  ],
+  "transitions": [
+    {"state": "Ordered", "action": "Collect Sample", "next_state": "Sample Collected", "allowed": "Lab Technician"},
+    {"state": "Ordered", "action": "Outsource", "next_state": "Outsourced", "allowed": "Lab Supervisor"},
+    {"state": "Sample Collected", "action": "Start Processing", "next_state": "In Process", "allowed": "Lab Technician"},
+    {"state": "In Process", "action": "Enter Result", "next_state": "Result Entered", "allowed": "Lab Technician"},
+    {"state": "Result Entered", "action": "Verify", "next_state": "Verified", "allowed": "Lab Supervisor"},
+    {"state": "Verified", "action": "Authorize", "next_state": "Authorized", "allowed": "Lab Supervisor"},
+    {"state": "Authorized", "action": "Release to Portal", "next_state": "Released", "allowed": "Lab Supervisor"}
+  ]
+}

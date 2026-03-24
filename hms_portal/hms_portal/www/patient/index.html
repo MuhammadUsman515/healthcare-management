@@ -1,0 +1,63 @@
+{% extends "templates/web.html" %}
+{% block title %}Patient Portal{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>Welcome to Patient Portal</h2>
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Appointments</h5>
+                    <p class="card-text">View and manage your appointments.</p>
+                    <a href="/patient/appointments" class="btn btn-primary">View Appointments</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lab Results</h5>
+                    <p class="card-text">View your lab test results.</p>
+                    <a href="/patient/lab-results" class="btn btn-primary">View Results</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Prescriptions</h5>
+                    <p class="card-text">View your prescriptions.</p>
+                    <a href="/patient/prescriptions" class="btn btn-primary">View Prescriptions</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Invoices & Payments</h5>
+                    <p class="card-text">View bills and make payments.</p>
+                    <a href="/patient/invoices" class="btn btn-primary">View Invoices</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Profile</h5>
+                    <p class="card-text">Update your personal information.</p>
+                    <a href="/patient/profile" class="btn btn-primary">My Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Welfare Status</h5>
+                    <p class="card-text">Check welfare case status.</p>
+                    <a href="/patient/welfare" class="btn btn-primary">Welfare</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

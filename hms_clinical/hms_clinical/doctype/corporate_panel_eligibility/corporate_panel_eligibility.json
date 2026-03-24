@@ -1,0 +1,22 @@
+{
+  "name": "CorporatePanelEligibility",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "title", "fieldtype": "Data", "label": "Title", "in_list_view": 1},
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "in_standard_filter": 1},
+    {"fieldname": "description", "fieldtype": "Text", "label": "Description"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive\nCompleted\nCancelled", "default": "Active", "in_list_view": 1},
+    {"fieldname": "date", "fieldtype": "Date", "label": "Date", "default": "Today"},
+    {"fieldname": "practitioner", "fieldtype": "Link", "label": "Practitioner", "options": "Practitioner"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Physician", "read": 1, "write": 1, "create": 1},
+    {"role": "Nurse", "read": 1, "write": 1, "create": 1}
+  ],
+  "sort_field": "modified", "sort_order": "DESC"
+}

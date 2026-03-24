@@ -1,0 +1,25 @@
+{
+  "name": "Admission Workflow",
+  "doctype": "Workflow",
+  "document_type": "Inpatient Admission",
+  "is_active": 1,
+  "states": [
+    {"state": "Admitted", "allow_edit": "Nurse", "doc_status": 1},
+    {"state": "Transferred", "allow_edit": "Nurse", "doc_status": 1},
+    {"state": "Discharge Initiated", "allow_edit": "Physician", "doc_status": 1},
+    {"state": "Billing Clearance", "allow_edit": "Cashier", "doc_status": 1},
+    {"state": "Discharged", "allow_edit": "Healthcare Administrator", "doc_status": 1},
+    {"state": "LAMA", "allow_edit": "Physician", "doc_status": 1},
+    {"state": "Expired", "allow_edit": "Physician", "doc_status": 1},
+    {"state": "Cancelled", "allow_edit": "Healthcare Administrator", "doc_status": 2}
+  ],
+  "transitions": [
+    {"state": "Admitted", "action": "Transfer", "next_state": "Transferred", "allowed": "Nurse"},
+    {"state": "Admitted", "action": "Initiate Discharge", "next_state": "Discharge Initiated", "allowed": "Physician"},
+    {"state": "Admitted", "action": "LAMA", "next_state": "LAMA", "allowed": "Physician"},
+    {"state": "Admitted", "action": "Mark Expired", "next_state": "Expired", "allowed": "Physician"},
+    {"state": "Transferred", "action": "Initiate Discharge", "next_state": "Discharge Initiated", "allowed": "Physician"},
+    {"state": "Discharge Initiated", "action": "Billing Clearance", "next_state": "Billing Clearance", "allowed": "Cashier"},
+    {"state": "Billing Clearance", "action": "Complete Discharge", "next_state": "Discharged", "allowed": "Nurse"}
+  ]
+}

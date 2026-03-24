@@ -1,0 +1,29 @@
+{
+  "name": "Welfare Case Workflow",
+  "doctype": "Workflow",
+  "document_type": "Patient Welfare Case",
+  "is_active": 1,
+  "states": [
+    {"state": "Draft", "allow_edit": "Welfare Officer", "doc_status": 0},
+    {"state": "Submitted", "allow_edit": "Welfare Officer", "doc_status": 1},
+    {"state": "Documents Verified", "allow_edit": "Welfare Officer", "doc_status": 1},
+    {"state": "Social Assessment Done", "allow_edit": "Welfare Officer", "doc_status": 1},
+    {"state": "Committee Review", "allow_edit": "Welfare Committee", "doc_status": 1},
+    {"state": "Approved", "allow_edit": "Welfare Committee", "doc_status": 1},
+    {"state": "Rejected", "allow_edit": "Welfare Committee", "doc_status": 1},
+    {"state": "Subsidy Allocated", "allow_edit": "Welfare Officer", "doc_status": 1},
+    {"state": "Applied to Bill", "allow_edit": "Cashier", "doc_status": 1},
+    {"state": "Closed", "allow_edit": "Healthcare Administrator", "doc_status": 1}
+  ],
+  "transitions": [
+    {"state": "Draft", "action": "Submit", "next_state": "Submitted", "allowed": "Welfare Officer"},
+    {"state": "Submitted", "action": "Verify Documents", "next_state": "Documents Verified", "allowed": "Welfare Officer"},
+    {"state": "Documents Verified", "action": "Complete Assessment", "next_state": "Social Assessment Done", "allowed": "Welfare Officer"},
+    {"state": "Social Assessment Done", "action": "Send to Committee", "next_state": "Committee Review", "allowed": "Welfare Officer"},
+    {"state": "Committee Review", "action": "Approve", "next_state": "Approved", "allowed": "Welfare Committee"},
+    {"state": "Committee Review", "action": "Reject", "next_state": "Rejected", "allowed": "Welfare Committee"},
+    {"state": "Approved", "action": "Allocate Subsidy", "next_state": "Subsidy Allocated", "allowed": "Welfare Officer"},
+    {"state": "Subsidy Allocated", "action": "Apply to Bill", "next_state": "Applied to Bill", "allowed": "Cashier"},
+    {"state": "Applied to Bill", "action": "Close", "next_state": "Closed", "allowed": "Healthcare Administrator"}
+  ]
+}

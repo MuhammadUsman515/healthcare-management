@@ -1,0 +1,18 @@
+{
+  "name": "Reception",
+  "module": "HMS Clinical",
+  "doctype": "Workspace",
+  "label": "Reception",
+  "icon": "health",
+  "is_standard": 1,
+  "roles": ["Nurse", "Healthcare Administrator"],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Reception Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"New Patient\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Check In\",\"label\":\"Check In\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Visit\",\"label\":\"Visits\",\"type\":\"DocType\"}}]",
+  "number_cards": [
+    {"label": "Today's Appointments", "document_type": "Appointment", "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}"},
+    {"label": "Waiting Patients", "document_type": "Appointment", "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": \"Checked In\"}"},
+    {"label": "New Registrations Today", "document_type": "Patient", "filters_json": "{\"creation\": [\">\", \"Today\"]}"}
+  ],
+  "charts": [
+    {"chart_name": "Hourly Footfall", "label": "Hourly Footfall"}
+  ]
+}

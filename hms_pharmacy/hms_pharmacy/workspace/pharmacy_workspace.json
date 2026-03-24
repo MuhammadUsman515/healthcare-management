@@ -1,0 +1,10 @@
+{
+  "name": "Pharmacy",
+  "module": "HMS Pharmacy",
+  "doctype": "Workspace",
+  "label": "Pharmacy",
+  "icon": "pill",
+  "is_standard": 1,
+  "roles": ["Pharmacist"],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Dispense Slip\",\"label\":\"Dispense\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Drug Item\",\"label\":\"Drug Items\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"POS Invoice\",\"label\":\"POS\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Prescription Fulfillment\",\"label\":\"Fulfillment\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Batch\",\"label\":\"Batches\",\"type\":\"DocType\"}}]"
+}

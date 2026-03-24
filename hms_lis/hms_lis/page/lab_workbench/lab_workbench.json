@@ -1,0 +1,10 @@
+{
+  "name": "Lab Workbench",
+  "module": "HMS LIS",
+  "doctype": "Page",
+  "page_name": "lab-workbench",
+  "title": "Lab Workbench",
+  "icon": "flask",
+  "standard": "Yes",
+  "roles": [{"role": "Lab Technician"}, {"role": "Lab Supervisor"}, {"role": "Healthcare Administrator"}]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Patient Registration Slip",
+  "doctype": "Print Format",
+  "doc_type": "Patient",
+  "standard": "Yes",
+  "module": "HMS Clinical",
+  "html": "<div style='text-align:center;margin-bottom:15px'><h3>{{ company or '' }}</h3><h5>Patient Registration Slip</h5></div><hr><table width='100%'><tr><td><strong>MRN:</strong> {{ doc.mrn }}</td><td><strong>Date:</strong> {{ doc.registration_date }}</td></tr><tr><td><strong>Name:</strong> {{ doc.full_name }}</td><td><strong>Gender:</strong> {{ doc.gender }}</td></tr><tr><td><strong>DOB:</strong> {{ doc.dob or '-' }}</td><td><strong>Age:</strong> {{ doc.age_display or '-' }}</td></tr><tr><td><strong>Blood Group:</strong> {{ doc.blood_group or '-' }}</td><td><strong>CNIC:</strong> {{ doc.cnic or '-' }}</td></tr><tr><td><strong>Mobile:</strong> {{ doc.mobile or '-' }}</td><td><strong>Email:</strong> {{ doc.email or '-' }}</td></tr></table><hr><p><small>This is a computer generated slip.</small></p>"
+}

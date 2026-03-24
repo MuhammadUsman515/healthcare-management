@@ -1,0 +1,20 @@
+{
+  "name": "PosInvoiceItem",
+  "module": "HMS Pharmacy",
+  "doctype": "DocType",
+  "istable": 1,
+  "naming_rule": "Expression",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "title", "fieldtype": "Data", "label": "Title", "in_list_view": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive", "default": "Active", "in_list_view": 1},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": 1}
+  ],
+  "permissions": [
+    {"role": "Pharmacist", "read": 1, "write": 1, "create": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "modified", "sort_order": "DESC"
+}

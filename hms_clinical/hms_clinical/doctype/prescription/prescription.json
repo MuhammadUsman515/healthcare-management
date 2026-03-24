@@ -1,0 +1,33 @@
+{
+  "name": "Prescription",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-RX-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "encounter", "fieldtype": "Link", "label": "Encounter", "options": "Encounter"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "practitioner", "fieldtype": "Link", "label": "Prescribing Practitioner", "options": "Practitioner", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "prescription_date", "fieldtype": "Date", "label": "Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSigned\nSent to Pharmacy\nPartially Dispensed\nFully Dispensed\nCancelled\nExpired", "default": "Draft", "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "section_items", "fieldtype": "Section Break", "label": "Prescription Items"},
+    {"fieldname": "items", "fieldtype": "Table", "label": "Items", "options": "Prescription Item"},
+    {"fieldname": "section_notes", "fieldtype": "Section Break", "label": "Additional"},
+    {"fieldname": "diagnosis", "fieldtype": "Small Text", "label": "Diagnosis"},
+    {"fieldname": "instructions", "fieldtype": "Small Text", "label": "General Instructions"},
+    {"fieldname": "notes", "fieldtype": "Text", "label": "Notes"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+    {"role": "Physician", "read": 1, "write": 1, "create": 1, "submit": 1}
+  ],
+  "search_fields": "patient_name, prescription_date, status",
+  "title_field": "patient_name",
+  "sort_field": "prescription_date",
+  "sort_order": "DESC"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Donation Receipt",
+  "module": "HMS Revenue",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "DON-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "donor", "fieldtype": "Link", "label": "Donor", "options": "Donor", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "donor_name", "fieldtype": "Data", "label": "Donor Name", "fetch_from": "donor.title", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "donation_date", "fieldtype": "Date", "label": "Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "donation_type", "fieldtype": "Select", "label": "Type", "options": "Zakat\nSadaqah\nGeneral\nSpecific Fund\nEndowment", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "section_fund", "fieldtype": "Section Break", "label": "Fund Allocation"},
+    {"fieldname": "donation_fund", "fieldtype": "Link", "label": "Fund", "options": "Donation Fund"},
+    {"fieldname": "restriction", "fieldtype": "Select", "label": "Restriction", "options": "Unrestricted\nTemporarily Restricted\nPermanently Restricted", "default": "Unrestricted"},
+    {"fieldname": "restriction_details", "fieldtype": "Small Text", "label": "Restriction Details", "depends_on": "eval:doc.restriction!='Unrestricted'"},
+    {"fieldname": "column_break_fund", "fieldtype": "Column Break"},
+    {"fieldname": "payment_mode", "fieldtype": "Select", "label": "Payment Mode", "options": "Cash\nCheque\nBank Transfer\nOnline", "default": "Cash"},
+    {"fieldname": "reference_number", "fieldtype": "Data", "label": "Reference Number"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Received\nAllocated\nUtilized\nReported", "default": "Received", "in_list_view": 1},
+    {"fieldname": "section_notes", "fieldtype": "Section Break"},
+    {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+  ],
+  "permissions": [
+    {"role": "Welfare Officer", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1}
+  ],
+  "sort_field": "donation_date", "sort_order": "DESC"
+}

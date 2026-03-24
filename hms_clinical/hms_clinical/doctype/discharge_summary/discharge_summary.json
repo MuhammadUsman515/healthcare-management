@@ -1,0 +1,40 @@
+{
+  "name": "Discharge Summary",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-DS-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "admission", "fieldtype": "Link", "label": "Admission", "options": "Inpatient Admission", "reqd": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "practitioner", "fieldtype": "Link", "label": "Discharging Practitioner", "options": "Practitioner", "reqd": 1},
+    {"fieldname": "discharge_date", "fieldtype": "Datetime", "label": "Discharge Date", "reqd": 1, "default": "Now"},
+    {"fieldname": "discharge_type", "fieldtype": "Select", "label": "Discharge Type", "options": "Normal\nLAMA\nTransfer\nExpired\nAbsconded", "default": "Normal", "in_list_view": 1},
+    {"fieldname": "section_summary", "fieldtype": "Section Break", "label": "Clinical Summary"},
+    {"fieldname": "admission_diagnosis", "fieldtype": "Small Text", "label": "Admission Diagnosis"},
+    {"fieldname": "final_diagnosis", "fieldtype": "Small Text", "label": "Final Diagnosis"},
+    {"fieldname": "treatment_given", "fieldtype": "Text", "label": "Treatment Given"},
+    {"fieldname": "procedures_performed", "fieldtype": "Text", "label": "Procedures Performed"},
+    {"fieldname": "investigation_summary", "fieldtype": "Text", "label": "Investigation Summary"},
+    {"fieldname": "section_discharge", "fieldtype": "Section Break", "label": "Discharge Plan"},
+    {"fieldname": "discharge_medications", "fieldtype": "Text", "label": "Discharge Medications"},
+    {"fieldname": "follow_up_instructions", "fieldtype": "Text", "label": "Follow-Up Instructions"},
+    {"fieldname": "follow_up_date", "fieldtype": "Date", "label": "Follow-Up Date"},
+    {"fieldname": "column_break_dis", "fieldtype": "Column Break"},
+    {"fieldname": "diet_advice", "fieldtype": "Small Text", "label": "Diet Advice"},
+    {"fieldname": "activity_advice", "fieldtype": "Small Text", "label": "Activity Advice"},
+    {"fieldname": "warning_signs", "fieldtype": "Small Text", "label": "Warning Signs to Watch For"},
+    {"fieldname": "condition_at_discharge", "fieldtype": "Select", "label": "Condition at Discharge", "options": "Stable\nImproved\nUnchanged\nDeteriorated\nCritical\nExpired"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+    {"role": "Physician", "read": 1, "write": 1, "create": 1, "submit": 1}
+  ],
+  "search_fields": "patient_name, discharge_date", "title_field": "patient_name",
+  "sort_field": "discharge_date", "sort_order": "DESC"
+}

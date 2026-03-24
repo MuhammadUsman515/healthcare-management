@@ -1,0 +1,10 @@
+{
+  "name": "Queue Board",
+  "module": "HMS Clinical",
+  "doctype": "Page",
+  "page_name": "queue-board",
+  "title": "Queue Board",
+  "icon": "users",
+  "standard": "Yes",
+  "roles": [{"role": "Nurse"}, {"role": "Physician"}, {"role": "Healthcare Administrator"}]
+}

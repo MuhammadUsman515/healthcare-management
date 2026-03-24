@@ -1,0 +1,8 @@
+{
+  "name": "Donation Receipt Print",
+  "doctype": "Print Format",
+  "doc_type": "Donation Receipt",
+  "standard": "Yes",
+  "module": "HMS Revenue",
+  "html": "<div style='text-align:center;margin-bottom:15px'><h3>Donation Receipt</h3></div><hr><table width='100%'><tr><td><strong>Receipt#:</strong> {{ doc.name }}</td><td><strong>Date:</strong> {{ doc.donation_date }}</td></tr><tr><td><strong>Donor:</strong> {{ doc.donor_name }}</td><td><strong>Type:</strong> {{ doc.donation_type }}</td></tr><tr><td colspan='2'><h4 style='text-align:center;margin:20px 0'>Amount: {{ frappe.format(doc.amount, {'fieldtype': 'Currency'}) }}</h4></td></tr><tr><td><strong>Fund:</strong> {{ doc.donation_fund or 'General' }}</td><td><strong>Payment:</strong> {{ doc.payment_mode }}</td></tr>{% if doc.reference_number %}<tr><td colspan='2'><strong>Reference:</strong> {{ doc.reference_number }}</td></tr>{% endif %}</table><hr><p style='text-align:center'><em>JazakAllah Khair for your generous contribution.</em></p><p style='text-align:center'><small>This receipt is for your records. Please retain for tax purposes.</small></p>"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Lab Test Template",
+  "module": "HMS LIS",
+  "doctype": "DocType",
+  "naming_rule": "Set by user",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "test_name", "fieldtype": "Data", "label": "Test Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "test_group", "fieldtype": "Select", "label": "Test Group", "options": "Hematology\nBiochemistry\nMicrobiology\nPathology\nSerology\nHormones\nUrinalysis\nOther", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "sample_type", "fieldtype": "Select", "label": "Default Sample Type", "options": "Blood\nSerum\nPlasma\nUrine\nStool\nSputum\nCSF\nSwab\nOther"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "result_unit", "fieldtype": "Data", "label": "Result Unit"},
+    {"fieldname": "normal_range_male", "fieldtype": "Data", "label": "Normal Range (Male)"},
+    {"fieldname": "normal_range_female", "fieldtype": "Data", "label": "Normal Range (Female)"},
+    {"fieldname": "normal_range_child", "fieldtype": "Data", "label": "Normal Range (Child)"},
+    {"fieldname": "critical_low", "fieldtype": "Float", "label": "Critical Low"},
+    {"fieldname": "critical_high", "fieldtype": "Float", "label": "Critical High"},
+    {"fieldname": "section_pricing", "fieldtype": "Section Break", "label": "Pricing"},
+    {"fieldname": "rate", "fieldtype": "Currency", "label": "Rate", "in_list_view": 1},
+    {"fieldname": "expected_tat_hours", "fieldtype": "Int", "label": "Expected TAT (hours)", "default": 24},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+  ],
+  "permissions": [
+    {"role": "Lab Supervisor", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Lab Technician", "read": 1}
+  ],
+  "sort_field": "modified", "sort_order": "DESC", "title_field": "test_name"
+}

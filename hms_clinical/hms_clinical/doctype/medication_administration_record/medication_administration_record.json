@@ -1,0 +1,32 @@
+{
+  "name": "Medication Administration Record",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-MAR-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1},
+    {"fieldname": "admission", "fieldtype": "Link", "label": "Admission", "options": "Inpatient Admission", "reqd": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "drug_name", "fieldtype": "Data", "label": "Drug Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "dose", "fieldtype": "Data", "label": "Dose", "reqd": 1},
+    {"fieldname": "route", "fieldtype": "Select", "label": "Route", "options": "Oral\nIV\nIM\nSC\nTopical\nSublingual\nRectal\nInhalation"},
+    {"fieldname": "section_admin", "fieldtype": "Section Break", "label": "Administration"},
+    {"fieldname": "scheduled_time", "fieldtype": "Datetime", "label": "Scheduled Time", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "administered_time", "fieldtype": "Datetime", "label": "Administered Time"},
+    {"fieldname": "administered_by", "fieldtype": "Link", "label": "Administered By", "options": "User"},
+    {"fieldname": "column_break_admin", "fieldtype": "Column Break"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Scheduled\nAdministered\nHeld\nRefused\nMissed", "default": "Scheduled", "in_list_view": 1},
+    {"fieldname": "hold_reason", "fieldtype": "Small Text", "label": "Hold/Refusal Reason", "depends_on": "eval:['Held','Refused'].includes(doc.status)"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "permissions": [
+    {"role": "Nurse", "read": 1, "write": 1, "create": 1},
+    {"role": "Physician", "read": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "scheduled_time", "sort_order": "ASC", "title_field": "patient_name"
+}

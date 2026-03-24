@@ -1,0 +1,10 @@
+{
+  "name": "Executive Dashboard",
+  "module": "HMS Revenue",
+  "doctype": "Workspace",
+  "label": "Executive Dashboard",
+  "icon": "bar-chart",
+  "is_standard": 1,
+  "roles": ["Healthcare Administrator", "Hospital Admin"],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Executive Command Center\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"Patients\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Practitioner\",\"label\":\"Practitioners\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Final Bill\",\"label\":\"Revenue\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"IPD\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient Welfare Case\",\"label\":\"Welfare\",\"type\":\"DocType\"}}]"
+}

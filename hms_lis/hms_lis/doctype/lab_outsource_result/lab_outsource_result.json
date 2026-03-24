@@ -1,0 +1,22 @@
+{
+  "name": "LabOutsourceResult",
+  "module": "HMS LIS",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "title", "fieldtype": "Data", "label": "Title", "in_list_view": 1},
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient"},
+    {"fieldname": "lab_test", "fieldtype": "Link", "label": "Lab Test", "options": "Lab Test"},
+    {"fieldname": "description", "fieldtype": "Text", "label": "Description"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive\nCompleted", "default": "Active", "in_list_view": 1},
+    {"fieldname": "date", "fieldtype": "Datetime", "label": "Date", "default": "Now"}
+  ],
+  "permissions": [
+    {"role": "Lab Technician", "read": 1, "write": 1, "create": 1},
+    {"role": "Lab Supervisor", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "modified", "sort_order": "DESC"
+}

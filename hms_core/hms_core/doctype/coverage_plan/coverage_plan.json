@@ -1,0 +1,25 @@
+{
+  "name": "Coverage Plan",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Set by user",
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "plan_name", "fieldtype": "Data", "label": "Plan Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "insurance_provider", "fieldtype": "Link", "label": "Insurance Provider", "options": "Insurance Provider", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "coverage_type", "fieldtype": "Select", "label": "Coverage Type", "options": "Full\nPartial\nCapped", "default": "Full"},
+    {"fieldname": "max_coverage_amount", "fieldtype": "Currency", "label": "Max Coverage Amount"},
+    {"fieldname": "copay_percentage", "fieldtype": "Percent", "label": "Co-Pay %"},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1, "in_list_view": 1},
+    {"fieldname": "section_coverage", "fieldtype": "Section Break", "label": "Covered Items"},
+    {"fieldname": "covers_opd", "fieldtype": "Check", "label": "Covers OPD"},
+    {"fieldname": "covers_ipd", "fieldtype": "Check", "label": "Covers IPD"},
+    {"fieldname": "covers_lab", "fieldtype": "Check", "label": "Covers Lab"},
+    {"fieldname": "covers_pharmacy", "fieldtype": "Check", "label": "Covers Pharmacy"},
+    {"fieldname": "covers_radiology", "fieldtype": "Check", "label": "Covers Radiology"},
+    {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+  ],
+  "permissions": [{"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}],
+  "sort_field": "modified", "sort_order": "DESC", "title_field": "plan_name"
+}

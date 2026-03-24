@@ -1,0 +1,17 @@
+{
+  "name": "Encounter Workflow",
+  "doctype": "Workflow",
+  "document_type": "Encounter",
+  "is_active": 1,
+  "states": [
+    {"state": "Draft", "allow_edit": "Physician", "doc_status": 0},
+    {"state": "Under Review", "allow_edit": "Physician", "doc_status": 0},
+    {"state": "Signed", "allow_edit": "Healthcare Administrator", "doc_status": 1},
+    {"state": "Closed", "allow_edit": "Healthcare Administrator", "doc_status": 1}
+  ],
+  "transitions": [
+    {"state": "Draft", "action": "Submit for Review", "next_state": "Under Review", "allowed": "Physician"},
+    {"state": "Under Review", "action": "Sign", "next_state": "Signed", "allowed": "Physician"},
+    {"state": "Signed", "action": "Close", "next_state": "Closed", "allowed": "Healthcare Administrator"}
+  ]
+}

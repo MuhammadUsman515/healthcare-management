@@ -1,0 +1,10 @@
+{
+  "name": "Bed Board",
+  "module": "HMS Clinical",
+  "doctype": "Page",
+  "page_name": "bed-board",
+  "title": "Bed Board",
+  "icon": "home",
+  "standard": "Yes",
+  "roles": [{"role": "Nurse"}, {"role": "Physician"}, {"role": "Healthcare Administrator"}]
+}

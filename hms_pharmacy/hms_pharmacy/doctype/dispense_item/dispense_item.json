@@ -1,0 +1,20 @@
+{
+  "name": "Dispense Item",
+  "module": "HMS Pharmacy",
+  "doctype": "DocType",
+  "istable": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "drug_item", "fieldtype": "Link", "label": "Drug Item", "options": "Drug Item", "in_list_view": 1},
+    {"fieldname": "drug_name", "fieldtype": "Data", "label": "Drug Name", "fetch_from": "drug_item.drug_name", "in_list_view": 1},
+    {"fieldname": "batch_no", "fieldtype": "Link", "label": "Batch", "options": "Batch"},
+    {"fieldname": "expiry_date", "fieldtype": "Date", "label": "Expiry", "fetch_from": "batch_no.expiry_date"},
+    {"fieldname": "quantity", "fieldtype": "Float", "label": "Qty", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "rate", "fieldtype": "Currency", "label": "Rate", "in_list_view": 1},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "dosage", "fieldtype": "Data", "label": "Dosage"},
+    {"fieldname": "frequency", "fieldtype": "Data", "label": "Frequency"},
+    {"fieldname": "instructions", "fieldtype": "Small Text", "label": "Instructions"}
+  ],
+  "permissions": []
+}

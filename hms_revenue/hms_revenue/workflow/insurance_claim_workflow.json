@@ -1,0 +1,25 @@
+{
+  "name": "Insurance Claim Workflow",
+  "doctype": "Workflow",
+  "document_type": "Claim Submission",
+  "is_active": 1,
+  "states": [
+    {"state": "Draft", "allow_edit": "Cashier", "doc_status": 0},
+    {"state": "Preauth Requested", "allow_edit": "Cashier", "doc_status": 0},
+    {"state": "Approved", "allow_edit": "Cashier", "doc_status": 0},
+    {"state": "Claim Submitted", "allow_edit": "Cashier", "doc_status": 1},
+    {"state": "Under Review", "allow_edit": "Healthcare Administrator", "doc_status": 1},
+    {"state": "Settled", "allow_edit": "Healthcare Administrator", "doc_status": 1},
+    {"state": "Denied", "allow_edit": "Healthcare Administrator", "doc_status": 1},
+    {"state": "Reconciled", "allow_edit": "Healthcare Administrator", "doc_status": 1}
+  ],
+  "transitions": [
+    {"state": "Draft", "action": "Request Preauth", "next_state": "Preauth Requested", "allowed": "Cashier"},
+    {"state": "Preauth Requested", "action": "Mark Approved", "next_state": "Approved", "allowed": "Cashier"},
+    {"state": "Approved", "action": "Submit Claim", "next_state": "Claim Submitted", "allowed": "Cashier"},
+    {"state": "Claim Submitted", "action": "Under Review", "next_state": "Under Review", "allowed": "Healthcare Administrator"},
+    {"state": "Under Review", "action": "Settle", "next_state": "Settled", "allowed": "Healthcare Administrator"},
+    {"state": "Under Review", "action": "Deny", "next_state": "Denied", "allowed": "Healthcare Administrator"},
+    {"state": "Settled", "action": "Reconcile", "next_state": "Reconciled", "allowed": "Healthcare Administrator"}
+  ]
+}

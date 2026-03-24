@@ -1,0 +1,34 @@
+{
+  "name": "Panel Contract",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "naming_series:",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "label": "Naming Series", "options": "PNL-.YYYY.-.####"},
+    {"fieldname": "insurance_provider", "fieldtype": "Link", "label": "Insurance Provider", "options": "Insurance Provider", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "contract_type", "fieldtype": "Select", "label": "Contract Type", "options": "Cashless\nReimbursement\nHybrid", "reqd": 1},
+    {"fieldname": "valid_from", "fieldtype": "Date", "label": "Valid From", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "valid_to", "fieldtype": "Date", "label": "Valid To", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nActive\nExpired\nTerminated", "default": "Draft", "in_list_view": 1},
+    {"fieldname": "section_terms", "fieldtype": "Section Break", "label": "Terms"},
+    {"fieldname": "discount_percentage", "fieldtype": "Percent", "label": "Discount %"},
+    {"fieldname": "credit_days", "fieldtype": "Int", "label": "Credit Days", "default": 30},
+    {"fieldname": "credit_limit", "fieldtype": "Currency", "label": "Credit Limit"},
+    {"fieldname": "column_break_terms", "fieldtype": "Column Break"},
+    {"fieldname": "preauth_required", "fieldtype": "Check", "label": "Pre-Authorization Required"},
+    {"fieldname": "covered_services", "fieldtype": "Text", "label": "Covered Services"},
+    {"fieldname": "excluded_services", "fieldtype": "Text", "label": "Excluded Services"},
+    {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

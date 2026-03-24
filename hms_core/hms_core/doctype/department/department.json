@@ -1,0 +1,28 @@
+{
+  "name": "Department",
+  "module": "HMS Core",
+  "doctype": "DocType",
+  "naming_rule": "Set by user",
+  "engine": "InnoDB",
+  "is_submittable": 0,
+  "quick_entry": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "department_name", "fieldtype": "Data", "label": "Department Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_standard_filter": 1},
+    {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Hospital Branch", "in_standard_filter": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "department_type", "fieldtype": "Select", "label": "Type", "options": "Clinical\nDiagnostic\nAdministrative\nSupport", "default": "Clinical"},
+    {"fieldname": "department_head", "fieldtype": "Link", "label": "Department Head", "options": "User"},
+    {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1, "in_list_view": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+  ],
+  "permissions": [
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Hospital Admin", "read": 1, "write": 1, "create": 1},
+    {"role": "Physician", "read": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "department_name"
+}

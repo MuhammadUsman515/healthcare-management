@@ -1,0 +1,22 @@
+{
+  "name": "Prescription Workflow",
+  "doctype": "Workflow",
+  "document_type": "Prescription",
+  "is_active": 1,
+  "states": [
+    {"state": "Draft", "allow_edit": "Physician", "doc_status": 0},
+    {"state": "Signed", "allow_edit": "Physician", "doc_status": 1},
+    {"state": "Sent to Pharmacy", "allow_edit": "Pharmacist", "doc_status": 1},
+    {"state": "Partially Dispensed", "allow_edit": "Pharmacist", "doc_status": 1},
+    {"state": "Fully Dispensed", "allow_edit": "Pharmacist", "doc_status": 1},
+    {"state": "Cancelled", "allow_edit": "Healthcare Administrator", "doc_status": 2},
+    {"state": "Expired", "allow_edit": "Healthcare Administrator", "doc_status": 1}
+  ],
+  "transitions": [
+    {"state": "Draft", "action": "Sign", "next_state": "Signed", "allowed": "Physician"},
+    {"state": "Signed", "action": "Send to Pharmacy", "next_state": "Sent to Pharmacy", "allowed": "Physician"},
+    {"state": "Sent to Pharmacy", "action": "Partial Dispense", "next_state": "Partially Dispensed", "allowed": "Pharmacist"},
+    {"state": "Sent to Pharmacy", "action": "Full Dispense", "next_state": "Fully Dispensed", "allowed": "Pharmacist"},
+    {"state": "Partially Dispensed", "action": "Full Dispense", "next_state": "Fully Dispensed", "allowed": "Pharmacist"}
+  ]
+}

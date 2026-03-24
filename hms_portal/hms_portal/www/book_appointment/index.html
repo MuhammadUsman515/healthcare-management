@@ -1,0 +1,55 @@
+{% extends "templates/web.html" %}
+{% block title %}Book Appointment{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>Book an Appointment</h2>
+    <form id="appointment-form" class="mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label>Department</label>
+                    <select class="form-control" id="department" name="department">
+                        <option value="">Select Department</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Doctor</label>
+                    <select class="form-control" id="practitioner" name="practitioner">
+                        <option value="">Select Doctor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Time</label>
+                    <input type="time" class="form-control" id="appointment_time" name="appointment_time" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label>Reason for Visit</label>
+            <textarea class="form-control" id="reason" name="reason" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</div>
+<script>
+document.getElementById('appointment-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(this));
+    try {
+        const response = await frappe.call({
+            method: 'hms_portal.hms_portal.api.portal.book_appointment',
+            args: data,
+        });
+        frappe.msgprint('Appointment booked successfully!');
+    } catch(err) {
+        frappe.msgprint('Error booking appointment. Please try again.');
+    }
+});
+</script>
+{% endblock %}

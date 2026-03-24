@@ -1,0 +1,24 @@
+{
+  "name": "Appointment Workflow",
+  "doctype": "Workflow",
+  "document_type": "Appointment",
+  "is_active": 1,
+  "workflow_state_field": "status",
+  "states": [
+    {"state": "Scheduled", "allow_edit": "Nurse", "doc_status": 0},
+    {"state": "Checked In", "allow_edit": "Nurse", "doc_status": 0},
+    {"state": "In Consultation", "allow_edit": "Physician", "doc_status": 0},
+    {"state": "Completed", "allow_edit": "Physician", "doc_status": 0},
+    {"state": "Cancelled", "allow_edit": "Healthcare Administrator", "doc_status": 0},
+    {"state": "No Show", "allow_edit": "Nurse", "doc_status": 0},
+    {"state": "Rescheduled", "allow_edit": "Nurse", "doc_status": 0}
+  ],
+  "transitions": [
+    {"state": "Scheduled", "action": "Check In", "next_state": "Checked In", "allowed": "Nurse"},
+    {"state": "Scheduled", "action": "Cancel", "next_state": "Cancelled", "allowed": "Nurse"},
+    {"state": "Scheduled", "action": "Mark No Show", "next_state": "No Show", "allowed": "Nurse"},
+    {"state": "Scheduled", "action": "Reschedule", "next_state": "Rescheduled", "allowed": "Nurse"},
+    {"state": "Checked In", "action": "Start Consultation", "next_state": "In Consultation", "allowed": "Physician"},
+    {"state": "In Consultation", "action": "Complete", "next_state": "Completed", "allowed": "Physician"}
+  ]
+}

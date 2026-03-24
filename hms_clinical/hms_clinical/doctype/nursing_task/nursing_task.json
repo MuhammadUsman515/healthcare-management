@@ -1,0 +1,33 @@
+{
+  "name": "Nursing Task",
+  "module": "HMS Clinical",
+  "doctype": "DocType",
+  "naming_rule": "Expression",
+  "autoname": "HLC-NT-.YYYY.-.#####",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "patient", "fieldtype": "Link", "label": "Patient", "options": "Patient", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "fetch_from": "patient.full_name", "read_only": 1},
+    {"fieldname": "admission", "fieldtype": "Link", "label": "Admission", "options": "Inpatient Admission"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "task_type", "fieldtype": "Select", "label": "Task Type", "options": "Medication\nVitals Check\nDressing\nIV Care\nSample Collection\nPatient Positioning\nFeeding\nDischarge Prep\nOther", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "priority", "fieldtype": "Select", "label": "Priority", "options": "Low\nMedium\nHigh\nUrgent", "default": "Medium"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Pending\nIn Progress\nCompleted\nOverdue\nCancelled", "default": "Pending", "in_list_view": 1, "in_standard_filter": 1},
+    {"fieldname": "section_schedule", "fieldtype": "Section Break", "label": "Schedule"},
+    {"fieldname": "scheduled_datetime", "fieldtype": "Datetime", "label": "Scheduled Date/Time", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "completed_datetime", "fieldtype": "Datetime", "label": "Completed Date/Time"},
+    {"fieldname": "assigned_nurse", "fieldtype": "Link", "label": "Assigned Nurse", "options": "User", "in_standard_filter": 1},
+    {"fieldname": "column_break_sched", "fieldtype": "Column Break"},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Task Description"},
+    {"fieldname": "completion_notes", "fieldtype": "Small Text", "label": "Completion Notes"},
+    {"fieldname": "related_order", "fieldtype": "Dynamic Link", "label": "Related Order", "options": "related_order_type"},
+    {"fieldname": "related_order_type", "fieldtype": "Link", "label": "Order Type", "options": "DocType", "hidden": 1}
+  ],
+  "permissions": [
+    {"role": "Nurse", "read": 1, "write": 1, "create": 1},
+    {"role": "Physician", "read": 1},
+    {"role": "Healthcare Administrator", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "scheduled_datetime", "sort_order": "ASC", "title_field": "patient_name"
+}
