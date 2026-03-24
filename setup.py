@@ -9,6 +9,6 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
-    install_requires=["frappe"],
+    install_requires=[],
     python_requires=">=3.10",
 )
