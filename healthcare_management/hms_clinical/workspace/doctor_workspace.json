@@ -1,12 +1,291 @@
 {
   "name": "Doctor Panel",
-  "module": "HMS Clinical",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Clinical",
   "label": "Doctor Panel",
+  "title": "Doctor Panel",
   "icon": "heart",
-  "public": 1,
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 4,
-  "roles": ["Physician"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Doctor Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"My Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Encounter\",\"label\":\"Encounters\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Prescription\",\"label\":\"Prescriptions\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Order\",\"label\":\"Lab Orders\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"My Inpatients\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Physician"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Doctor Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Appointments Today\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Encounters\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Inpatients\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Appointments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Encounters\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prescriptions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Rounding\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Orders & Notes\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedure Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Referral Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clinical Notes\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discharge Summaries\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Diagnosis Frequency\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Productivity\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Appointment",
+      "link_count": 0,
+      "link_to": "Appointment",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Encounter",
+      "link_count": 0,
+      "link_to": "Encounter",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Prescription",
+      "link_count": 0,
+      "link_to": "Prescription",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Order",
+      "link_count": 0,
+      "link_to": "Lab Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Inpatient Admission",
+      "link_count": 0,
+      "link_to": "Inpatient Admission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Procedure Order",
+      "link_count": 0,
+      "link_to": "Procedure Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Referral Order",
+      "link_count": 0,
+      "link_to": "Referral Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Clinical Note",
+      "link_count": 0,
+      "link_to": "Clinical Note",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Discharge Summary",
+      "link_count": 0,
+      "link_to": "Discharge Summary",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Care Plan",
+      "link_count": 0,
+      "link_to": "Care Plan",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Diet Order",
+      "link_count": 0,
+      "link_to": "Diet Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Diagnosis Frequency",
+      "link_count": 0,
+      "link_to": "Diagnosis Frequency",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Doctor Productivity",
+      "link_count": 0,
+      "link_to": "Doctor Productivity",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "My Appointments",
+      "link_to": "Appointment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Encounters",
+      "link_to": "Encounter",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Prescriptions",
+      "link_to": "Prescription",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Lab Orders",
+      "link_to": "Lab Order",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "IPD Admissions",
+      "link_to": "Inpatient Admission",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Doctor Rounding",
+      "link_to": "doctor-rounding",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Procedure Orders",
+      "link_to": "Procedure Order",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Referral Orders",
+      "link_to": "Referral Order",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Clinical Notes",
+      "link_to": "Clinical Note",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Discharge Summaries",
+      "link_to": "Discharge Summary",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Diagnosis Frequency",
+      "link_to": "Diagnosis Frequency",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Doctor Productivity",
+      "link_to": "Doctor Productivity",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Appointment",
+      "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}",
+      "label": "My Appointments Today",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Encounter",
+      "filters_json": "{\"status\": \"Draft\"}",
+      "label": "Pending Encounters",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Inpatient Admission",
+      "filters_json": "{\"status\": \"Admitted\"}",
+      "label": "My Inpatients",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

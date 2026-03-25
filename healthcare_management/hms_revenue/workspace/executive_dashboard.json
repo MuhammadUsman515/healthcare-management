@@ -1,12 +1,340 @@
 {
   "name": "Executive Dashboard",
-  "module": "HMS Revenue",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Revenue",
   "label": "Executive Dashboard",
-  "icon": "bar-chart",
-  "public": 1,
+  "title": "Executive Dashboard",
+  "icon": "chart",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 9,
-  "roles": ["Healthcare Administrator", "Hospital Admin"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Executive Command Center\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"Patients\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Practitioner\",\"label\":\"Practitioners\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Final Bill\",\"label\":\"Revenue\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"IPD\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient Welfare Case\",\"label\":\"Welfare\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Healthcare Administrator"},
+    {"role": "Hospital Admin"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Executive Command Center\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Patients\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Practitioners\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Current Admissions\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Claims\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Operations\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patients\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Practitioners\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Revenue\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Cases\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Financial Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Revenue by Specialty\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Revenue Collection\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outstanding Receivables\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Claim Denial Analysis\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Admission Discharge Census\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bed Occupancy Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Productivity\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Diagnosis Frequency\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient",
+      "link_count": 0,
+      "link_to": "Patient",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Practitioner",
+      "link_count": 0,
+      "link_to": "Practitioner",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Inpatient Admission",
+      "link_count": 0,
+      "link_to": "Inpatient Admission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Final Bill",
+      "link_count": 0,
+      "link_to": "Final Bill",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient Welfare Case",
+      "link_count": 0,
+      "link_to": "Patient Welfare Case",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Claim Submission",
+      "link_count": 0,
+      "link_to": "Claim Submission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Payer Settlement",
+      "link_count": 0,
+      "link_to": "Payer Settlement",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Revenue by Specialty",
+      "link_count": 0,
+      "link_to": "Revenue by Specialty",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Daily Revenue Collection",
+      "link_count": 0,
+      "link_to": "Daily Revenue Collection",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Outstanding Receivables",
+      "link_count": 0,
+      "link_to": "Outstanding Receivables",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Claim Denial Analysis",
+      "link_count": 0,
+      "link_to": "Claim Denial Analysis",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Admission Discharge Census",
+      "link_count": 0,
+      "link_to": "Admission Discharge Census",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Bed Occupancy Report",
+      "link_count": 0,
+      "link_to": "Bed Occupancy Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Doctor Productivity",
+      "link_count": 0,
+      "link_to": "Doctor Productivity",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Diagnosis Frequency",
+      "link_count": 0,
+      "link_to": "Diagnosis Frequency",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Welfare Case Aging",
+      "link_count": 0,
+      "link_to": "Welfare Case Aging",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Patients",
+      "link_to": "Patient",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Practitioners",
+      "link_to": "Practitioner",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "IPD Admissions",
+      "link_to": "Inpatient Admission",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Revenue",
+      "link_to": "Final Bill",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Welfare Cases",
+      "link_to": "Patient Welfare Case",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Revenue by Specialty",
+      "link_to": "Revenue by Specialty",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Daily Revenue Collection",
+      "link_to": "Daily Revenue Collection",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Outstanding Receivables",
+      "link_to": "Outstanding Receivables",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Claim Denial Analysis",
+      "link_to": "Claim Denial Analysis",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Admission Discharge Census",
+      "link_to": "Admission Discharge Census",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Bed Occupancy Report",
+      "link_to": "Bed Occupancy Report",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Doctor Productivity",
+      "link_to": "Doctor Productivity",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Diagnosis Frequency",
+      "link_to": "Diagnosis Frequency",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Patient",
+      "filters_json": "{}",
+      "label": "Total Patients",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Practitioner",
+      "filters_json": "{\"status\": \"Active\"}",
+      "label": "Active Practitioners",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Inpatient Admission",
+      "filters_json": "{\"status\": \"Admitted\"}",
+      "label": "Current Admissions",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Claim Submission",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Claims",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

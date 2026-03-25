@@ -1,18 +1,271 @@
 {
   "name": "Healthcare Management",
-  "module": "HMS Core",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Core",
   "label": "Healthcare Management",
-  "icon": "hospital",
-  "public": 1,
+  "title": "Healthcare Management",
+  "icon": "health",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 1,
-  "roles": ["Healthcare Administrator", "Hospital Admin"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Management System\",\"level\":4}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"Patients\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Encounter\",\"label\":\"Encounters\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Practitioner\",\"label\":\"Practitioners\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"IPD Admissions\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Laboratory\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Order\",\"label\":\"Lab Orders\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Test\",\"label\":\"Lab Tests\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Result Authorization\",\"label\":\"Result Authorization\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Dispense Slip\",\"label\":\"Dispense\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Drug Item\",\"label\":\"Drug Items\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Prescription Fulfillment\",\"label\":\"Fulfillment\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Revenue\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Final Bill\",\"label\":\"Billing\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Cashier Receipt\",\"label\":\"Receipts\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Payment Entry\",\"label\":\"Payments\",\"type\":\"DocType\"}}]",
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Healthcare Administrator"},
+    {"role": "Hospital Admin"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Management System\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Patients\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Appointments\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Admissions\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Lab Orders\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patients\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Encounters\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Practitioners\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Laboratory\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Tests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Result Authorization\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drug Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fulfillment\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Revenue\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Billing\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receipts\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payments\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient",
+      "link_count": 0,
+      "link_to": "Patient",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Appointment",
+      "link_count": 0,
+      "link_to": "Appointment",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Encounter",
+      "link_count": 0,
+      "link_to": "Encounter",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Practitioner",
+      "link_count": 0,
+      "link_to": "Practitioner",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Inpatient Admission",
+      "link_count": 0,
+      "link_to": "Inpatient Admission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Order",
+      "link_count": 0,
+      "link_to": "Lab Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Test",
+      "link_count": 0,
+      "link_to": "Lab Test",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Dispense Slip",
+      "link_count": 0,
+      "link_to": "Dispense Slip",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Final Bill",
+      "link_count": 0,
+      "link_to": "Final Bill",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Patients",
+      "link_to": "Patient",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Appointments",
+      "link_to": "Appointment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Encounters",
+      "link_to": "Encounter",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Practitioners",
+      "link_to": "Practitioner",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "IPD Admissions",
+      "link_to": "Inpatient Admission",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Lab Orders",
+      "link_to": "Lab Order",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Lab Tests",
+      "link_to": "Lab Test",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Result Authorization",
+      "link_to": "Result Authorization",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Dispense",
+      "link_to": "Dispense Slip",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Drug Items",
+      "link_to": "Drug Item",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Fulfillment",
+      "link_to": "Prescription Fulfillment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Billing",
+      "link_to": "Final Bill",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Receipts",
+      "link_to": "Cashier Receipt",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Payments",
+      "link_to": "Payment Entry",
+      "stats_filter": "",
+      "type": "DocType"
+    }
+  ],
   "number_cards": [
-    {"label": "Total Patients", "document_type": "Patient", "filters_json": "{}"},
-    {"label": "Today's Appointments", "document_type": "Appointment", "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}"},
-    {"label": "Active Admissions", "document_type": "Inpatient Admission", "filters_json": "{\"status\": \"Admitted\"}"},
-    {"label": "Pending Lab Orders", "document_type": "Lab Order", "filters_json": "{\"status\": \"Pending\"}"}
-  ]
+    {
+      "color": "",
+      "document_type": "Patient",
+      "filters_json": "{}",
+      "label": "Total Patients",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Appointment",
+      "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}",
+      "label": "Today's Appointments",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Inpatient Admission",
+      "filters_json": "{\"status\": \"Admitted\"}",
+      "label": "Active Admissions",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Lab Order",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Lab Orders",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

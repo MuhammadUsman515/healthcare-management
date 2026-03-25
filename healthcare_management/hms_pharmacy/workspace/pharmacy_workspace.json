@@ -1,12 +1,420 @@
 {
   "name": "Pharmacy",
-  "module": "HMS Pharmacy",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Pharmacy",
   "label": "Pharmacy",
-  "icon": "pill",
-  "public": 1,
+  "title": "Pharmacy",
+  "icon": "list",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 7,
-  "roles": ["Pharmacist"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Dispense Slip\",\"label\":\"Dispense\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Drug Item\",\"label\":\"Drug Items\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"POS Invoice\",\"label\":\"POS\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Prescription Fulfillment\",\"label\":\"Fulfillment\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Batch\",\"label\":\"Batches\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Pharmacist"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Dispense\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Fulfillment\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Expiring Soon\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's POS\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Dispensing\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Slips\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Console\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fulfillment\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Queue\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POS Invoice\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Inventory\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drug Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Batches\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Goods Receipt\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Adjustment\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Transfer\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pharmacy Stores\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Setup\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generics\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Brands\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dosage Forms\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Suppliers\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Expiry Forecast\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Controlled Drug Audit\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fast Slow Moving Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prescription Dispense Conversion\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Dispense Slip",
+      "link_count": 0,
+      "link_to": "Dispense Slip",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Prescription Fulfillment",
+      "link_count": 0,
+      "link_to": "Prescription Fulfillment",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Dispense Queue",
+      "link_count": 0,
+      "link_to": "Dispense Queue",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "POS Invoice",
+      "link_count": 0,
+      "link_to": "POS Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Drug Item",
+      "link_count": 0,
+      "link_to": "Drug Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Batch",
+      "link_count": 0,
+      "link_to": "Batch",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Goods Receipt",
+      "link_count": 0,
+      "link_to": "Goods Receipt",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Stock Adjustment",
+      "link_count": 0,
+      "link_to": "Stock Adjustment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Stock Transfer",
+      "link_count": 0,
+      "link_to": "Stock Transfer",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Pharmacy Store",
+      "link_count": 0,
+      "link_to": "Pharmacy Store",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Generic",
+      "link_count": 0,
+      "link_to": "Generic",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Brand",
+      "link_count": 0,
+      "link_to": "Brand",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Dosage Form",
+      "link_count": 0,
+      "link_to": "Dosage Form",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier",
+      "link_count": 0,
+      "link_to": "Supplier",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Medication Return",
+      "link_count": 0,
+      "link_to": "Medication Return",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Stock Expiry Forecast",
+      "link_count": 0,
+      "link_to": "Stock Expiry Forecast",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Controlled Drug Audit",
+      "link_count": 0,
+      "link_to": "Controlled Drug Audit",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Fast Slow Moving Items",
+      "link_count": 0,
+      "link_to": "Fast Slow Moving Items",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Prescription Dispense Conversion",
+      "link_count": 0,
+      "link_to": "Prescription Dispense Conversion",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Dispense Slips",
+      "link_to": "Dispense Slip",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Dispense Console",
+      "link_to": "pharmacy-dispense-console",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Fulfillment",
+      "link_to": "Prescription Fulfillment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Dispense Queue",
+      "link_to": "Dispense Queue",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "POS Invoice",
+      "link_to": "POS Invoice",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Drug Items",
+      "link_to": "Drug Item",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Batches",
+      "link_to": "Batch",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Goods Receipt",
+      "link_to": "Goods Receipt",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Stock Adjustment",
+      "link_to": "Stock Adjustment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Stock Transfer",
+      "link_to": "Stock Transfer",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Pharmacy Stores",
+      "link_to": "Pharmacy Store",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Generics",
+      "link_to": "Generic",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Brands",
+      "link_to": "Brand",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Dosage Forms",
+      "link_to": "Dosage Form",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Suppliers",
+      "link_to": "Supplier",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Stock Expiry Forecast",
+      "link_to": "Stock Expiry Forecast",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Controlled Drug Audit",
+      "link_to": "Controlled Drug Audit",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Fast Slow Moving Items",
+      "link_to": "Fast Slow Moving Items",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Prescription Dispense Conversion",
+      "link_to": "Prescription Dispense Conversion",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Dispense Slip",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Dispense",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Prescription Fulfillment",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Fulfillment",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Batch",
+      "filters_json": "{\"expiry_date\": [\"<\", \"Today\"]}",
+      "label": "Expiring Soon",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "POS Invoice",
+      "filters_json": "{\"creation\": [\">\", \"Today\"]}",
+      "label": "Today's POS",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

@@ -1,12 +1,290 @@
 {
   "name": "Nurse Station",
-  "module": "HMS Clinical",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Clinical",
   "label": "Nurse Station",
-  "icon": "clipboard",
-  "public": 1,
+  "title": "Nurse Station",
+  "icon": "file",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 5,
-  "roles": ["Nurse"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Nurse Station\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Nursing Task\",\"label\":\"My Tasks\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Medication Administration Record\",\"label\":\"Medication Admin\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Vital Signs\",\"label\":\"Vital Signs\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Inpatient Admission\",\"label\":\"Active Admissions\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Bed\",\"label\":\"Bed Status\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Nurse"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Nurse Station\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Nursing Tasks\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Admissions\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending MAR\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Occupied Beds\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Tasks & Monitoring\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Tasks\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Medication Admin\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vital Signs\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Intake Output\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pain Assessment\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Ward Management\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bed Board\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Handover Log\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nursing Notes\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nursing Task Compliance\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bed Occupancy Report\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Nursing Task",
+      "link_count": 0,
+      "link_to": "Nursing Task",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Medication Administration Record",
+      "link_count": 0,
+      "link_to": "Medication Administration Record",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Vital Signs",
+      "link_count": 0,
+      "link_to": "Vital Signs",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Inpatient Admission",
+      "link_count": 0,
+      "link_to": "Inpatient Admission",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Bed",
+      "link_count": 0,
+      "link_to": "Bed",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Intake Output Chart",
+      "link_count": 0,
+      "link_to": "Intake Output Chart",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Pain Assessment",
+      "link_count": 0,
+      "link_to": "Pain Assessment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Handover Log",
+      "link_count": 0,
+      "link_to": "Handover Log",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Nursing Note",
+      "link_count": 0,
+      "link_to": "Nursing Note",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Nursing Assessment",
+      "link_count": 0,
+      "link_to": "Nursing Assessment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "IV Fluid Chart",
+      "link_count": 0,
+      "link_to": "IV Fluid Chart",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Nursing Task Compliance",
+      "link_count": 0,
+      "link_to": "Nursing Task Compliance",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Bed Occupancy Report",
+      "link_count": 0,
+      "link_to": "Bed Occupancy Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "My Tasks",
+      "link_to": "Nursing Task",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Medication Admin",
+      "link_to": "Medication Administration Record",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Vital Signs",
+      "link_to": "Vital Signs",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Intake Output",
+      "link_to": "Intake Output Chart",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Pain Assessment",
+      "link_to": "Pain Assessment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "IPD Admissions",
+      "link_to": "Inpatient Admission",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Bed Board",
+      "link_to": "bed-board",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Handover Log",
+      "link_to": "Handover Log",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Nursing Notes",
+      "link_to": "Nursing Note",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Nursing Task Compliance",
+      "link_to": "Nursing Task Compliance",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Bed Occupancy Report",
+      "link_to": "Bed Occupancy Report",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Nursing Task",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Nursing Tasks",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Inpatient Admission",
+      "filters_json": "{\"status\": \"Admitted\"}",
+      "label": "Active Admissions",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Medication Administration Record",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending MAR",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Bed",
+      "filters_json": "{\"status\": \"Occupied\"}",
+      "label": "Occupied Beds",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

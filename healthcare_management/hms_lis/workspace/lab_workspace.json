@@ -1,12 +1,348 @@
 {
   "name": "Laboratory",
-  "module": "HMS LIS",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS LIS",
   "label": "Laboratory",
-  "icon": "flask",
-  "public": 1,
+  "title": "Laboratory",
+  "icon": "tool",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 6,
-  "roles": ["Lab Technician", "Lab Supervisor"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Laboratory Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Order\",\"label\":\"Lab Orders\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Sample Collection\",\"label\":\"Sample Collection\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Test\",\"label\":\"Lab Tests\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Result Authorization\",\"label\":\"Authorize Results\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Lab Test Template\",\"label\":\"Test Templates\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Lab Technician"},
+    {"role": "Lab Supervisor"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Laboratory Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Lab Orders\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Samples to Collect\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Tests in Progress\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Authorization\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Workflow\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Collection\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Tests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Result Authorization\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Workbench\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Setup & QC\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Test Templates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reference Ranges\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Control\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Containers\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Critical Values Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Turnaround Time\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Rejection Rate\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Test Volume by Department\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Unauthorized Results Aging\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Order",
+      "link_count": 0,
+      "link_to": "Lab Order",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sample Collection",
+      "link_count": 0,
+      "link_to": "Sample Collection",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Test",
+      "link_count": 0,
+      "link_to": "Lab Test",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Result Authorization",
+      "link_count": 0,
+      "link_to": "Result Authorization",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Test Template",
+      "link_count": 0,
+      "link_to": "Lab Test Template",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Reference Range",
+      "link_count": 0,
+      "link_to": "Reference Range",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Quality Control",
+      "link_count": 0,
+      "link_to": "Lab Quality Control",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sample Container",
+      "link_count": 0,
+      "link_to": "Sample Container",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Sample Accession",
+      "link_count": 0,
+      "link_to": "Sample Accession",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Critical Value Alert",
+      "link_count": 0,
+      "link_to": "Critical Value Alert",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Lab Outsource Request",
+      "link_count": 0,
+      "link_to": "Lab Outsource Request",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Critical Values Report",
+      "link_count": 0,
+      "link_to": "Critical Values Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Lab Turnaround Time",
+      "link_count": 0,
+      "link_to": "Lab Turnaround Time",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Sample Rejection Rate",
+      "link_count": 0,
+      "link_to": "Sample Rejection Rate",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Test Volume by Department",
+      "link_count": 0,
+      "link_to": "Test Volume by Department",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Unauthorized Results Aging",
+      "link_count": 0,
+      "link_to": "Unauthorized Results Aging",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Lab Orders",
+      "link_to": "Lab Order",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Sample Collection",
+      "link_to": "Sample Collection",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Lab Tests",
+      "link_to": "Lab Test",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Result Authorization",
+      "link_to": "Result Authorization",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Lab Workbench",
+      "link_to": "lab-workbench",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Test Templates",
+      "link_to": "Lab Test Template",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Reference Ranges",
+      "link_to": "Reference Range",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Quality Control",
+      "link_to": "Lab Quality Control",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Sample Containers",
+      "link_to": "Sample Container",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Critical Values Report",
+      "link_to": "Critical Values Report",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Lab Turnaround Time",
+      "link_to": "Lab Turnaround Time",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Sample Rejection Rate",
+      "link_to": "Sample Rejection Rate",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Test Volume by Department",
+      "link_to": "Test Volume by Department",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Unauthorized Results Aging",
+      "link_to": "Unauthorized Results Aging",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Lab Order",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Lab Orders",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Sample Collection",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Samples to Collect",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Lab Test",
+      "filters_json": "{\"status\": \"In Progress\"}",
+      "label": "Tests in Progress",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Result Authorization",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Authorization",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

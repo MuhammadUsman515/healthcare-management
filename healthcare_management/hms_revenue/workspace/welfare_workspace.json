@@ -1,12 +1,340 @@
 {
   "name": "Welfare",
-  "module": "HMS Revenue",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Revenue",
   "label": "Welfare",
+  "title": "Welfare",
   "icon": "heart",
-  "public": 1,
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 10,
-  "roles": ["Welfare Officer", "Welfare Committee"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Welfare Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient Welfare Case\",\"label\":\"Welfare Cases\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Donation Receipt\",\"label\":\"Donations\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Donation Fund\",\"label\":\"Funds\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Welfare Approval Decision\",\"label\":\"Approvals\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Fund Utilization Certificate\",\"label\":\"Utilization\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Welfare Officer"},
+    {"role": "Welfare Committee"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Welfare Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Welfare Cases\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Approvals\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Donations\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Funds\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Cases & Approvals\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Cases\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Approval Requests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Approval Decisions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Social Assessments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Committee Console\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Donations & Funds\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donations\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donors\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Funds\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilization Certificates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Disbursements\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Utilization\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fund Balance Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Case Aging\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient Welfare Case",
+      "link_count": 0,
+      "link_to": "Patient Welfare Case",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Welfare Approval Request",
+      "link_count": 0,
+      "link_to": "Welfare Approval Request",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Welfare Approval Decision",
+      "link_count": 0,
+      "link_to": "Welfare Approval Decision",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Social Assessment",
+      "link_count": 0,
+      "link_to": "Social Assessment",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Donation Receipt",
+      "link_count": 0,
+      "link_to": "Donation Receipt",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Donor",
+      "link_count": 0,
+      "link_to": "Donor",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Donation Fund",
+      "link_count": 0,
+      "link_to": "Donation Fund",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Fund Utilization Certificate",
+      "link_count": 0,
+      "link_to": "Fund Utilization Certificate",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Welfare Disbursement",
+      "link_count": 0,
+      "link_to": "Welfare Disbursement",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Treatment Sponsorship",
+      "link_count": 0,
+      "link_to": "Treatment Sponsorship",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient Subsidy Ledger",
+      "link_count": 0,
+      "link_to": "Patient Subsidy Ledger",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Welfare Committee",
+      "link_count": 0,
+      "link_to": "Welfare Committee",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Zakat Sadaqah Category",
+      "link_count": 0,
+      "link_to": "Zakat Sadaqah Category",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Donation Utilization",
+      "link_count": 0,
+      "link_to": "Donation Utilization",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Fund Balance Report",
+      "link_count": 0,
+      "link_to": "Fund Balance Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Welfare Case Aging",
+      "link_count": 0,
+      "link_to": "Welfare Case Aging",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Welfare Cases",
+      "link_to": "Patient Welfare Case",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Approval Requests",
+      "link_to": "Welfare Approval Request",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Approval Decisions",
+      "link_to": "Welfare Approval Decision",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Social Assessments",
+      "link_to": "Social Assessment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Committee Console",
+      "link_to": "welfare-committee-console",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Donations",
+      "link_to": "Donation Receipt",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Donors",
+      "link_to": "Donor",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Funds",
+      "link_to": "Donation Fund",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Utilization Certificates",
+      "link_to": "Fund Utilization Certificate",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Disbursements",
+      "link_to": "Welfare Disbursement",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Donation Utilization",
+      "link_to": "Donation Utilization",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Fund Balance Report",
+      "link_to": "Fund Balance Report",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Welfare Case Aging",
+      "link_to": "Welfare Case Aging",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Patient Welfare Case",
+      "filters_json": "{\"status\": \"Active\"}",
+      "label": "Active Welfare Cases",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Welfare Approval Request",
+      "filters_json": "{\"status\": \"Pending\"}",
+      "label": "Pending Approvals",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Donation Receipt",
+      "filters_json": "{}",
+      "label": "Total Donations",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Donation Fund",
+      "filters_json": "{\"status\": \"Active\"}",
+      "label": "Active Funds",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }

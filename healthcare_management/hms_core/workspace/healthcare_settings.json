@@ -1,12 +1,543 @@
 {
   "name": "Healthcare Settings",
-  "module": "HMS Core",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Core",
   "label": "Healthcare Settings",
+  "title": "Healthcare Settings",
   "icon": "setting",
-  "public": 1,
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 2,
-  "roles": ["Healthcare Administrator"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Settings\",\"level\":4}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Organization\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Company\",\"label\":\"Company\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Hospital Branch\",\"label\":\"Branches\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Department\",\"label\":\"Departments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Service Unit\",\"label\":\"Service Units\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Infrastructure\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Campus\",\"label\":\"Campus\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Building\",\"label\":\"Buildings\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Floor\",\"label\":\"Floors\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Configuration\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Holiday List\",\"label\":\"Holiday Lists\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Shift Type\",\"label\":\"Shift Types\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Cost Center\",\"label\":\"Cost Centers\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Price List\",\"label\":\"Price Lists\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Tax Template\",\"label\":\"Tax Templates\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"UOM\",\"label\":\"Units of Measure\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Healthcare Service Item\",\"label\":\"Service Items\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Payers & Insurance\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Insurance Provider\",\"label\":\"Insurance Providers\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"TPA\",\"label\":\"TPAs\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Payer\",\"label\":\"Payers\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Coverage Plan\",\"label\":\"Coverage Plans\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Panel Contract\",\"label\":\"Panel Contracts\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Panel Access Profile\",\"label\":\"Panel Access Profiles\",\"type\":\"DocType\"}},{\"type\":\"spacer\",\"data\":{\"height\":1}},{\"type\":\"header\",\"data\":{\"text\":\"Security & Audit\",\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Role Profile\",\"label\":\"Role Profiles\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Session Policy\",\"label\":\"Session Policy\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"MFA Policy\",\"label\":\"MFA Policy\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"External Access Policy\",\"label\":\"External Access\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Data Access Log\",\"label\":\"Data Access Logs\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Audit Exception\",\"label\":\"Audit Exceptions\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Consent Record\",\"label\":\"Consent Records\",\"type\":\"DocType\"}}]"
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Healthcare Administrator"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Settings\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Organization\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branches\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Departments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Units\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Infrastructure\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Campus\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Buildings\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floors\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Configuration\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Holiday Lists\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift Types\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cost Centers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Price Lists\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tax Templates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Units of Measure\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Items\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Payers & Insurance\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Insurance Providers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"TPAs\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Coverage Plans\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel Contracts\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel Access Profiles\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Security & Audit\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Profiles\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Session Policy\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFA Policy\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"External Access\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Access Logs\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Audit Exceptions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consent Records\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Company",
+      "link_count": 0,
+      "link_to": "Company",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Hospital Branch",
+      "link_count": 0,
+      "link_to": "Hospital Branch",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Department",
+      "link_count": 0,
+      "link_to": "Department",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Service Unit",
+      "link_count": 0,
+      "link_to": "Service Unit",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Campus",
+      "link_count": 0,
+      "link_to": "Campus",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Building",
+      "link_count": 0,
+      "link_to": "Building",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Floor",
+      "link_count": 0,
+      "link_to": "Floor",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Holiday List",
+      "link_count": 0,
+      "link_to": "Holiday List",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Shift Type",
+      "link_count": 0,
+      "link_to": "Shift Type",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Cost Center",
+      "link_count": 0,
+      "link_to": "Cost Center",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Price List",
+      "link_count": 0,
+      "link_to": "Price List",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Tax Template",
+      "link_count": 0,
+      "link_to": "Tax Template",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "UOM",
+      "link_count": 0,
+      "link_to": "UOM",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Healthcare Service Item",
+      "link_count": 0,
+      "link_to": "Healthcare Service Item",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Insurance Provider",
+      "link_count": 0,
+      "link_to": "Insurance Provider",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "TPA",
+      "link_count": 0,
+      "link_to": "TPA",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Payer",
+      "link_count": 0,
+      "link_to": "Payer",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Coverage Plan",
+      "link_count": 0,
+      "link_to": "Coverage Plan",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Panel Contract",
+      "link_count": 0,
+      "link_to": "Panel Contract",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Panel Access Profile",
+      "link_count": 0,
+      "link_to": "Panel Access Profile",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Role Profile",
+      "link_count": 0,
+      "link_to": "Role Profile",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Session Policy",
+      "link_count": 0,
+      "link_to": "Session Policy",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "MFA Policy",
+      "link_count": 0,
+      "link_to": "MFA Policy",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "External Access Policy",
+      "link_count": 0,
+      "link_to": "External Access Policy",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Data Access Log",
+      "link_count": 0,
+      "link_to": "Data Access Log",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Audit Exception",
+      "link_count": 0,
+      "link_to": "Audit Exception",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Consent Record",
+      "link_count": 0,
+      "link_to": "Consent Record",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Company",
+      "link_to": "Company",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Branches",
+      "link_to": "Hospital Branch",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Departments",
+      "link_to": "Department",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Service Units",
+      "link_to": "Service Unit",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Campus",
+      "link_to": "Campus",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Buildings",
+      "link_to": "Building",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Floors",
+      "link_to": "Floor",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Holiday Lists",
+      "link_to": "Holiday List",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Shift Types",
+      "link_to": "Shift Type",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Cost Centers",
+      "link_to": "Cost Center",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Price Lists",
+      "link_to": "Price List",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Tax Templates",
+      "link_to": "Tax Template",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Units of Measure",
+      "link_to": "UOM",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Service Items",
+      "link_to": "Healthcare Service Item",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Insurance Providers",
+      "link_to": "Insurance Provider",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "TPAs",
+      "link_to": "TPA",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Payers",
+      "link_to": "Payer",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Coverage Plans",
+      "link_to": "Coverage Plan",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Panel Contracts",
+      "link_to": "Panel Contract",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Panel Access Profiles",
+      "link_to": "Panel Access Profile",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Role Profiles",
+      "link_to": "Role Profile",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Session Policy",
+      "link_to": "Session Policy",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "MFA Policy",
+      "link_to": "MFA Policy",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "External Access",
+      "link_to": "External Access Policy",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Data Access Logs",
+      "link_to": "Data Access Log",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Audit Exceptions",
+      "link_to": "Audit Exception",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Consent Records",
+      "link_to": "Consent Record",
+      "stats_filter": "",
+      "type": "DocType"
+    }
+  ],
+  "number_cards": [],
+  "charts": []
 }

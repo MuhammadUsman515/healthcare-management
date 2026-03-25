@@ -1,20 +1,235 @@
 {
   "name": "Reception",
-  "module": "HMS Clinical",
+  "creation": "2024-01-01 00:00:00.000000",
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "docstatus": 0,
   "doctype": "Workspace",
+  "module": "HMS Clinical",
   "label": "Reception",
-  "icon": "health",
-  "public": 1,
+  "title": "Reception",
+  "icon": "users",
+  "indicator_color": "",
   "is_standard": 1,
+  "public": 1,
   "sequence_id": 3,
-  "roles": ["Nurse", "Healthcare Administrator"],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Reception Dashboard\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Patient\",\"label\":\"New Patient\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Appointment\",\"label\":\"Appointments\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Check In\",\"label\":\"Check In\",\"type\":\"DocType\"}},{\"type\":\"shortcut\",\"data\":{\"doctype\":\"Visit\",\"label\":\"Visits\",\"type\":\"DocType\"}}]",
-  "number_cards": [
-    {"label": "Today's Appointments", "document_type": "Appointment", "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}"},
-    {"label": "Waiting Patients", "document_type": "Appointment", "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": \"Checked In\"}"},
-    {"label": "New Registrations Today", "document_type": "Patient", "filters_json": "{\"creation\": [\">\", \"Today\"]}"}
+  "for_user": "",
+  "parent_page": "",
+  "restrict_to_domain": "",
+  "roles": [
+    {"role": "Nurse"},
+    {"role": "Healthcare Administrator"}
   ],
-  "charts": [
-    {"chart_name": "Hourly Footfall", "label": "Hourly Footfall"}
-  ]
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Reception Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Appointments\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Waiting Patients\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Registrations Today\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Actions\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Patient\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointments\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Check In\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visits\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Queue Board\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Admission Requests\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Registration Summary\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointment Load by Doctor\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Waiting Time Analysis\",\"col\":4}}]",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient",
+      "link_count": 0,
+      "link_to": "Patient",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Appointment",
+      "link_count": 0,
+      "link_to": "Appointment",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Check In",
+      "link_count": 0,
+      "link_to": "Check In",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Visit",
+      "link_count": 0,
+      "link_to": "Visit",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Admission Request",
+      "link_count": 0,
+      "link_to": "Admission Request",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Queue Token",
+      "link_count": 0,
+      "link_to": "Queue Token",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Guardian",
+      "link_count": 0,
+      "link_to": "Guardian",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Daily Registration Summary",
+      "link_count": 0,
+      "link_to": "Daily Registration Summary",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Appointment Load by Doctor",
+      "link_count": 0,
+      "link_to": "Appointment Load by Doctor",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Waiting Time Analysis",
+      "link_count": 0,
+      "link_to": "Waiting Time Analysis",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "New Patient",
+      "link_to": "Patient",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Appointments",
+      "link_to": "Appointment",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Check In",
+      "link_to": "Check In",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Visits",
+      "link_to": "Visit",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Queue Board",
+      "link_to": "queue-board",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "",
+      "doc_view": "List",
+      "label": "Admission Requests",
+      "link_to": "Admission Request",
+      "stats_filter": "",
+      "type": "DocType"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Daily Registration Summary",
+      "link_to": "Daily Registration Summary",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Appointment Load by Doctor",
+      "link_to": "Appointment Load by Doctor",
+      "stats_filter": "",
+      "type": "Report"
+    },
+    {
+      "color": "",
+      "doc_view": "",
+      "label": "Waiting Time Analysis",
+      "link_to": "Waiting Time Analysis",
+      "stats_filter": "",
+      "type": "Report"
+    }
+  ],
+  "number_cards": [
+    {
+      "color": "",
+      "document_type": "Appointment",
+      "filters_json": "{\"appointment_date\": [\"=\", \"Today\"], \"status\": [\"!=\", \"Cancelled\"]}",
+      "label": "Today's Appointments",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Check In",
+      "filters_json": "{\"status\": \"Waiting\"}",
+      "label": "Waiting Patients",
+      "type": "Document Type"
+    },
+    {
+      "color": "",
+      "document_type": "Patient",
+      "filters_json": "{\"creation\": [\">\", \"Today\"]}",
+      "label": "New Registrations Today",
+      "type": "Document Type"
+    }
+  ],
+  "charts": []
 }
