@@ -1,0 +1,1 @@
+{"name":"Stock Expiry Forecast","module":"HMS Pharmacy","doctype":"Report","report_type":"Script Report","ref_doctype":"Batch","is_standard":"Yes","filters":[{"fieldname":"days_ahead","label":"Days Ahead","fieldtype":"Int","default":90}]}

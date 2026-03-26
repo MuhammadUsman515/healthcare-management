@@ -1,0 +1,8 @@
+{
+  "name": "Deposit Receipt",
+  "doctype": "Print Format",
+  "doc_type": "Deposit",
+  "standard": "Yes",
+  "module": "HMS Revenue",
+  "html": "<div style='text-align:center;margin-bottom:10px'><h3>Deposit Receipt</h3></div><hr><table width='100%'><tr><td><strong>Patient:</strong> {{ doc.patient_name }}</td><td><strong>Deposit#:</strong> {{ doc.name }}</td></tr><tr><td><strong>Date:</strong> {{ doc.deposit_date or frappe.utils.formatdate(doc.creation) }}</td><td><strong>Status:</strong> {{ doc.status }}</td></tr></table><hr><table class='table table-bordered'><tr><td><strong>Deposit Amount</strong></td><td style='text-align:right'><strong>{{ frappe.format(doc.amount, {'fieldtype': 'Currency'}) }}</strong></td></tr><tr><td>Payment Mode</td><td style='text-align:right'>{{ doc.payment_mode or '-' }}</td></tr>{% if doc.balance %}<tr><td><strong>Available Balance</strong></td><td style='text-align:right'><strong>{{ frappe.format(doc.balance, {'fieldtype': 'Currency'}) }}</strong></td></tr>{% endif %}</table><hr><p style='text-align:center'><small>This deposit will be adjusted against the final bill.</small></p>"
+}

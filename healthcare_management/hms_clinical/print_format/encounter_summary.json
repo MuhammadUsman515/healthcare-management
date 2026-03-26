@@ -1,0 +1,8 @@
+{
+  "name": "Encounter Summary",
+  "doctype": "Print Format",
+  "doc_type": "Encounter",
+  "standard": "Yes",
+  "module": "HMS Clinical",
+  "html": "<div style='text-align:center;margin-bottom:10px'><h3>Clinical Encounter Summary</h3></div><hr><table width='100%'><tr><td><strong>Patient:</strong> {{ doc.patient_name }}</td><td><strong>MRN:</strong> {{ doc.patient }}</td></tr><tr><td><strong>Doctor:</strong> {{ doc.practitioner_name }}</td><td><strong>Date:</strong> {{ doc.encounter_date }}</td></tr><tr><td><strong>Department:</strong> {{ doc.department or '-' }}</td><td><strong>Type:</strong> {{ doc.encounter_type or '-' }}</td></tr></table><hr>{% if doc.chief_complaint %}<p><strong>Chief Complaint:</strong> {{ doc.chief_complaint }}</p>{% endif %}{% if doc.examination_findings %}<p><strong>Examination:</strong> {{ doc.examination_findings }}</p>{% endif %}{% if doc.diagnosis %}<p><strong>Diagnosis:</strong> {{ doc.diagnosis }}</p>{% endif %}{% if doc.treatment_plan %}<p><strong>Plan:</strong> {{ doc.treatment_plan }}</p>{% endif %}<hr><p style='text-align:center'><small>This is a computer generated document.</small></p>"
+}

@@ -53,7 +53,29 @@ class Appointment(Document):
             frappe.throw(_("Only scheduled appointments can be checked in."))
         self.status = "Checked In"
         self.save()
-        frappe.msgprint(_("Patient checked in. Token: {0}").format(self.token_number))
+        token = self.create_queue_token()
+        frappe.msgprint(_("Patient checked in. Token: {0}").format(token.token_number))
+
+    def create_queue_token(self):
+        existing = frappe.db.exists("Queue Token", {
+            "appointment": self.name,
+            "status": ["!=", "Cancelled"]
+        })
+        if existing:
+            return frappe.get_doc("Queue Token", existing)
+
+        token = frappe.get_doc({
+            "doctype": "Queue Token",
+            "appointment": self.name,
+            "patient": self.patient,
+            "practitioner": self.practitioner,
+            "department": self.department,
+            "token_number": self.token_number,
+            "date": self.appointment_date,
+            "status": "Active",
+        })
+        token.insert(ignore_permissions=True)
+        return token
 
     @frappe.whitelist()
     def reschedule(self, new_date, new_time):
@@ -88,3 +110,8 @@ def send_confirmation(doc, method=None):
         patient_mobile = frappe.db.get_value("Patient", doc.patient, "mobile")
         if patient_mobile:
             pass  # SMS/WhatsApp integration point
+
+
+def on_appointment_update(doc, method=None):
+    if doc.status == "Checked In" and doc.has_value_changed("status"):
+        doc.create_queue_token()

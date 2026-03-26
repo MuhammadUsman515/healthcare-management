@@ -1,0 +1,1 @@
+{"name":"Outstanding Receivables","module":"HMS Revenue","doctype":"Report","report_type":"Script Report","ref_doctype":"Final Bill","is_standard":"Yes","filters":[{"fieldname":"as_on_date","label":"As on Date","fieldtype":"Date","reqd":1,"default":"Today"}]}

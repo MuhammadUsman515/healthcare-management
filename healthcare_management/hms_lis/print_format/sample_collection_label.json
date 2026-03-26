@@ -1,0 +1,8 @@
+{
+  "name": "Sample Collection Label",
+  "doctype": "Print Format",
+  "doc_type": "Sample Collection",
+  "standard": "Yes",
+  "module": "HMS LIS",
+  "html": "<div style='border:2px solid #333;padding:10px;width:300px'><h4 style='text-align:center;margin:5px 0'>{{ doc.patient_name }}</h4><table width='100%' style='font-size:11px'><tr><td><strong>MRN:</strong> {{ doc.patient }}</td><td><strong>ID:</strong> {{ doc.name }}</td></tr><tr><td><strong>Date:</strong> {{ doc.collection_date }}</td><td><strong>Time:</strong> {{ doc.collection_time or '-' }}</td></tr><tr><td colspan='2'><strong>Sample:</strong> {{ doc.sample_type or '-' }}</td></tr><tr><td colspan='2'><strong>Tests:</strong> {{ doc.test_names or '-' }}</td></tr></table></div>"
+}

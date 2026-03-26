@@ -41,6 +41,7 @@ doc_events = {
     },
     "Appointment": {
         "after_insert": "healthcare_management.hms_clinical.doctype.appointment.appointment.send_confirmation",
+        "on_update": "healthcare_management.hms_clinical.doctype.appointment.appointment.on_appointment_update",
     },
     # LIS
     "Lab Test": {
