@@ -1,0 +1,16 @@
+{
+  "name": "Prescription Ready for Pickup",
+  "doctype": "Notification",
+  "document_type": "Dispense Slip",
+  "event": "New",
+  "condition": "doc.status == 'Completed' or doc.status == 'Ready'",
+  "subject": "Prescription Dispensed — Ready for Pickup",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Prescription Dispensed</h3>\n  <p>Dear {{ doc.patient_name }},</p>\n  <p>Your prescription has been dispensed and is ready for collection.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Prescription Ref</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.prescription }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Pharmacy</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.pharmacy_store }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Dispensed On</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.format_datetime(doc.dispense_datetime) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Total Amount</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.fmt_money(doc.net_amount) }}</td>\n    </tr>\n  </table>\n  {% if doc.safety_warnings %}\n  <div style=\"background: #fff3cd; border: 1px solid #ffc107; padding: 12px; border-radius: 4px; margin: 16px 0;\">\n    <strong>Important Notes:</strong><br>{{ doc.safety_warnings }}\n  </div>\n  {% endif %}\n  <p>Please collect your medication from the pharmacy counter. If you have any questions about your medication, ask the dispensing pharmacist.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

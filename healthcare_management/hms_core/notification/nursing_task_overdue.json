@@ -1,0 +1,20 @@
+{
+  "name": "Nursing Task Overdue",
+  "doctype": "Notification",
+  "document_type": "Nursing Task",
+  "event": "Value Change",
+  "value_changed": "status",
+  "condition": "doc.status == 'Overdue'",
+  "subject": "OVERDUE Nursing Task — {{ doc.patient_name }} ({{ doc.task_type }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <div style=\"background: #f39c12; color: white; padding: 12px 16px; border-radius: 4px 4px 0 0;\">\n    <h3 style=\"margin: 0;\">Nursing Task Overdue</h3>\n  </div>\n  <div style=\"border: 2px solid #f39c12; border-top: none; padding: 16px; border-radius: 0 0 4px 4px;\">\n    <p>The following nursing task is past its scheduled time and requires immediate attention.</p>\n    <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Patient</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.patient_name }} ({{ doc.patient }})</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Admission</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.admission or '-' }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Task Type</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.task_type }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Priority</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.priority }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Scheduled At</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd; color: #e74c3c;\">{{ frappe.utils.format_datetime(doc.scheduled_datetime) }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Assigned Nurse</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.assigned_nurse or 'Unassigned' }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fef9e7; font-weight: bold;\">Description</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.description or '-' }}</td>\n      </tr>\n    </table>\n    <p>Please complete this task as soon as possible and update the task record.</p>\n  </div>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "assigned_nurse"
+    },
+    {
+      "receiver_by_role": "Nursing Supervisor"
+    }
+  ],
+  "enabled": 1
+}

@@ -1,0 +1,47 @@
+{% extends "templates/web.html" %}
+{% block title %}Health Packages{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>Health Check-up Packages</h2>
+    <p class="text-muted">Comprehensive health screening packages for preventive care.</p>
+    <div id="packages-list" class="row mt-4">
+        <p class="text-muted">Loading packages...</p>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Health Package',
+            fields: ['name', 'package_name', 'description', 'price', 'tests_included'],
+            filters: { is_active: 1 },
+            limit_page_length: 20
+        },
+        callback(r) {
+            let container = document.getElementById('packages-list');
+            let pkgs = r.message || [];
+            if (!pkgs.length) {
+                container.innerHTML = '<p class="text-muted col-12">No packages available at the moment.</p>';
+                return;
+            }
+            container.innerHTML = pkgs.map(p => `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">${p.package_name || p.name}</h5>
+                            <p class="card-text text-muted">${p.description || ''}</p>
+                            ${p.price ? `<h4 class="text-primary">Rs. ${p.price.toLocaleString()}</h4>` : ''}
+                            <a href="/book-appointment?package=${p.name}" class="btn btn-outline-primary btn-sm mt-2">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        },
+        error() {
+            document.getElementById('packages-list').innerHTML = '<p class="text-muted col-12">Health packages will be available soon.</p>';
+        }
+    });
+});
+</script>
+{% endblock %}

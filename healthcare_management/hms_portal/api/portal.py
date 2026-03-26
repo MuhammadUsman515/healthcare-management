@@ -116,6 +116,92 @@ def verify_lab_report(report_no, mobile, dob):
     return test
 
 
+@frappe.whitelist()
+def update_patient_profile(mobile=None, email=None, address=None,
+                           emergency_contact_name=None, emergency_contact_phone=None):
+    """Update patient profile from portal."""
+    patient_name = frappe.db.get_value("Patient", {"user": frappe.session.user}, "name")
+    if not patient_name:
+        frappe.throw(_("No patient record found."))
+
+    patient = frappe.get_doc("Patient", patient_name)
+    if mobile:
+        patient.mobile = mobile
+    if email:
+        patient.email = email
+    if address is not None:
+        patient.address = address
+    if emergency_contact_name is not None:
+        patient.emergency_contact_name = emergency_contact_name
+    if emergency_contact_phone is not None:
+        patient.emergency_contact_phone = emergency_contact_phone
+    patient.save(ignore_permissions=True)
+    return "ok"
+
+
+@frappe.whitelist(allow_guest=True)
+def get_lab_report(report_number, patient_identifier):
+    """Public lab report access by report number and mobile/CNIC."""
+    if not report_number or not patient_identifier:
+        return {"success": False, "error": "Please provide both report number and identifier."}
+
+    patient = frappe.db.get_value(
+        "Patient",
+        {"mobile": patient_identifier},
+        "name",
+    )
+    if not patient:
+        patient = frappe.db.get_value(
+            "Patient",
+            {"cnic": patient_identifier},
+            "name",
+        )
+    if not patient:
+        return {"success": False, "error": "Patient not found. Please check your mobile/CNIC."}
+
+    test = frappe.db.get_value(
+        "Lab Test",
+        {"name": report_number, "patient": patient, "status": "Released"},
+        ["name", "test_name", "patient_name", "result_value", "result_unit",
+         "normal_range", "result_status", "order_date"],
+        as_dict=True,
+    )
+    if not test:
+        return {"success": False, "error": "Report not found or not yet released."}
+
+    return {"success": True, "report": test}
+
+
+@frappe.whitelist(allow_guest=True)
+def check_report_status(order_number, mobile):
+    """Check status of lab tests by order/report number and mobile."""
+    if not order_number or not mobile:
+        return {"success": False}
+
+    patient = frappe.db.get_value("Patient", {"mobile": mobile}, "name")
+    if not patient:
+        return {"success": False}
+
+    tests = frappe.get_all(
+        "Lab Test",
+        filters={"patient": patient, "name": ["like", f"%{order_number}%"]},
+        fields=["name", "test_name", "status", "order_date"],
+        limit_page_length=20,
+    )
+    if not tests:
+        tests = frappe.get_all(
+            "Lab Test",
+            filters={"patient": patient, "lab_order": order_number},
+            fields=["name", "test_name", "status", "order_date"],
+            limit_page_length=20,
+        )
+
+    if not tests:
+        return {"success": False}
+
+    return {"success": True, "tests": tests}
+
+
 def has_lab_report_permission(doc, ptype, user):
     """Check if user has permission to view lab report."""
     patient = frappe.db.get_value("Patient", {"user": user}, "name")

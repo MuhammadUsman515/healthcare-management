@@ -1,0 +1,18 @@
+{
+  "name": "Appointment Reminder",
+  "doctype": "Notification",
+  "document_type": "Appointment",
+  "event": "Days Before",
+  "days_in_advance": 1,
+  "reference_date_field": "appointment_date",
+  "condition": "doc.status == 'Scheduled'",
+  "subject": "Reminder: Appointment Tomorrow — {{ doc.appointment_time }}",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Appointment Reminder</h3>\n  <p>Dear {{ doc.patient_name }},</p>\n  <p>This is a friendly reminder that you have an appointment <strong>tomorrow</strong>.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.formatdate(doc.appointment_date) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Time</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.appointment_time }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Doctor</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.practitioner_name }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Department</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.department }}</td>\n    </tr>\n  </table>\n  <p>Please remember to:</p>\n  <ul>\n    <li>Arrive 15 minutes early</li>\n    <li>Bring your ID and insurance documents</li>\n    <li>Bring any previous medical reports or prescriptions</li>\n  </ul>\n  <p style=\"color: #7f8c8d; font-size: 12px;\">If you cannot attend, please inform us at your earliest convenience so we can offer the slot to another patient.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

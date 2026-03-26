@@ -1,0 +1,17 @@
+{
+  "name": "Lab Report Ready",
+  "doctype": "Notification",
+  "document_type": "Result Authorization",
+  "event": "Value Change",
+  "value_changed": "release_to_portal",
+  "condition": "doc.release_to_portal == 1 and doc.result_status != 'Critical'",
+  "subject": "Lab Results Available — {{ doc.lab_test }}",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Lab Results Ready</h3>\n  <p>Dear {{ doc.patient_name }},</p>\n  <p>Your laboratory results are now available.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Lab Test</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.lab_test }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Status</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.result_status }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Authorized By</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.authorized_by }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.format_datetime(doc.authorization_datetime) }}</td>\n    </tr>\n  </table>\n  <p>You can view and download your results through the patient portal. Please consult your doctor for interpretation of the results.</p>\n  <p style=\"color: #7f8c8d; font-size: 12px;\">This is an automated notification. Please do not reply to this message.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

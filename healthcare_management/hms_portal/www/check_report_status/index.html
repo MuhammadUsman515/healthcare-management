@@ -1,0 +1,57 @@
+{% extends "templates/web.html" %}
+{% block title %}Check Report Status{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Check Report Status</h3>
+                    <p class="text-muted text-center">Track the current status of your lab report.</p>
+                    <form id="status-form">
+                        <div class="form-group mb-3">
+                            <label>Lab Order / Report Number</label>
+                            <input type="text" class="form-control" id="order_number" placeholder="Enter order or report number" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Mobile Number</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="03XX-XXXXXXX" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Check Status</button>
+                    </form>
+                    <div id="status-result" class="mt-4" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('status-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    frappe.call({
+        method: 'healthcare_management.hms_portal.api.portal.check_report_status',
+        args: {
+            order_number: document.getElementById('order_number').value,
+            mobile: document.getElementById('mobile').value
+        },
+        callback(r) {
+            let div = document.getElementById('status-result');
+            div.style.display = 'block';
+            if (r.message && r.message.success) {
+                let tests = r.message.tests;
+                let html = '<div class="alert alert-info">Found ' + tests.length + ' test(s)</div>';
+                html += '<table class="table table-bordered"><thead><tr><th>Test</th><th>Status</th><th>Expected</th></tr></thead><tbody>';
+                tests.forEach(t => {
+                    let badge = {'Ordered':'warning','Sample Collected':'info','In Process':'primary','Completed':'success','Cancelled':'secondary'}[t.status] || 'dark';
+                    html += `<tr><td>${t.test_name}</td><td><span class="badge badge-${badge}">${t.status}</span></td><td>${t.expected_date || '-'}</td></tr>`;
+                });
+                html += '</tbody></table>';
+                div.innerHTML = html;
+            } else {
+                div.innerHTML = '<div class="alert alert-danger">No reports found. Please verify your details.</div>';
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

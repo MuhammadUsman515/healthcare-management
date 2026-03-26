@@ -1,0 +1,39 @@
+{% extends "templates/web.html" %}
+{% block title %}My Lab Results{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>My Lab Results</h2>
+    <p class="text-muted">Only released and authorized results are shown.</p>
+    <div id="results-list" class="mt-3">
+        <p class="text-muted">Loading results...</p>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    frappe.call({
+        method: 'healthcare_management.hms_portal.api.portal.get_my_lab_results',
+        callback(r) {
+            let results = r.message || [];
+            let container = document.getElementById('results-list');
+            if (!results.length) {
+                container.innerHTML = '<p class="text-muted">No lab results available.</p>';
+                return;
+            }
+            container.innerHTML = '<table class="table table-bordered"><thead><tr><th>Test</th><th>Result</th><th>Normal Range</th><th>Status</th><th>Date</th><th></th></tr></thead><tbody>' +
+                results.map(t => {
+                    let cls = t.result_status === 'Critical' ? 'text-danger font-weight-bold' : t.result_status === 'Abnormal' ? 'text-warning' : '';
+                    return `<tr>
+                        <td>${t.test_name}</td>
+                        <td>${t.result_value || '-'} ${t.result_unit || ''}</td>
+                        <td>${t.normal_range || '-'}</td>
+                        <td><span class="${cls}">${t.result_status || 'Normal'}</span></td>
+                        <td>${t.authorized_datetime || '-'}</td>
+                        <td><a href="/api/method/frappe.utils.print_format.download_pdf?doctype=Lab Test&name=${t.name}&format=Lab Report Print" class="btn btn-sm btn-outline-primary" target="_blank">PDF</a></td>
+                    </tr>`;
+                }).join('') +
+                '</tbody></table>';
+        }
+    });
+});
+</script>
+{% endblock %}

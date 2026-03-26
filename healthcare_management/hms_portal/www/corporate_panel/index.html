@@ -1,0 +1,63 @@
+{% extends "templates/web.html" %}
+{% block title %}Corporate Panel{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>Corporate Panel Login</h2>
+            <p class="text-muted">Access your organization's healthcare dashboard to manage employee health benefits, view utilization reports, and track panel agreements.</p>
+            {% if frappe.session.user != "Guest" %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5>Welcome, {{ frappe.session.user }}</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Employee List</h6>
+                                    <p class="text-muted">Manage covered employees</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary" id="btn-employees">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Utilization Report</h6>
+                                    <p class="text-muted">Service usage statistics</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary" id="btn-utilization">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Claims History</h6>
+                                    <p class="text-muted">View submitted claims</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary" id="btn-claims">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Outstanding Balance</h6>
+                                    <p class="text-muted">Account receivables</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary" id="btn-balance">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p>Please <a href="/login?redirect-to=/corporate-panel">log in</a> with your corporate credentials to access the panel.</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

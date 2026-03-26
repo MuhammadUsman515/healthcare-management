@@ -41,5 +41,66 @@ def pending_authorization_reminder():
 
 
 def qc_daily_review():
-    """Generate daily QC review summary."""
-    pass
+    """Generate daily QC review summary and email to lab supervisors."""
+    from frappe.utils import today, fmt_money
+
+    qc_runs = frappe.get_all(
+        "QC Run",
+        filters={"date": today()},
+        fields=["name", "analyzer", "test_template", "status", "mean_value",
+                "sd_value", "cv_percent", "westgard_violation"],
+    )
+
+    if not qc_runs:
+        return
+
+    failed_runs = [r for r in qc_runs if r.status in ("Failed", "Rejected")]
+    violation_runs = [r for r in qc_runs if r.westgard_violation]
+
+    summary_rows = ""
+    for run in qc_runs:
+        indicator = "red" if run.status in ("Failed", "Rejected") else "green"
+        violation = run.westgard_violation or "None"
+        summary_rows += f"""
+        <tr>
+            <td>{run.name}</td>
+            <td>{run.analyzer or '-'}</td>
+            <td>{run.test_template or '-'}</td>
+            <td style="color: {indicator};">{run.status}</td>
+            <td>{run.mean_value or '-'}</td>
+            <td>{run.sd_value or '-'}</td>
+            <td>{run.cv_percent or '-'}%</td>
+            <td>{violation}</td>
+        </tr>"""
+
+    message = f"""
+    <h3>Daily QC Review Summary - {today()}</h3>
+    <p>Total QC Runs: {len(qc_runs)} | Passed: {len(qc_runs) - len(failed_runs)}
+    | Failed: {len(failed_runs)} | Westgard Violations: {len(violation_runs)}</p>
+    <table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>QC Run</th><th>Analyzer</th><th>Test</th><th>Status</th>
+                <th>Mean</th><th>SD</th><th>CV%</th><th>Violation</th>
+            </tr>
+        </thead>
+        <tbody>{summary_rows}</tbody>
+    </table>
+    """
+
+    supervisors = frappe.get_all(
+        "Has Role",
+        filters={"role": "Lab Supervisor", "parenttype": "User"},
+        pluck="parent",
+    )
+    active_supervisors = [
+        u for u in set(supervisors)
+        if frappe.db.get_value("User", u, "enabled")
+    ]
+
+    if active_supervisors:
+        frappe.sendmail(
+            recipients=active_supervisors,
+            subject=f"Daily QC Review Summary - {today()}",
+            message=message,
+        )

@@ -1,0 +1,20 @@
+{
+  "name": "Inpatient Admission Notification",
+  "doctype": "Notification",
+  "document_type": "Admission Request",
+  "event": "Value Change",
+  "value_changed": "status",
+  "condition": "doc.status == 'Admitted'",
+  "subject": "Patient Admitted — {{ doc.patient }} ({{ doc.title }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Inpatient Admission Notification</h3>\n  <p>A patient has been admitted to the facility.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Patient</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.patient }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Admitting Physician</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.practitioner }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Admission Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.formatdate(doc.date) }}</td>\n    </tr>\n    {% if doc.description %}\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Reason</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.description }}</td>\n    </tr>\n    {% endif %}\n  </table>\n  <p>Please ensure all admission protocols are completed, including initial nursing assessment, medication reconciliation, and care plan setup.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_role": "Nursing Supervisor"
+    },
+    {
+      "receiver_by_role": "Ward Manager"
+    }
+  ],
+  "enabled": 1
+}

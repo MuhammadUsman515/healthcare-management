@@ -1,0 +1,19 @@
+{
+  "name": "Welfare Approval Decision Notification",
+  "doctype": "Notification",
+  "document_type": "Welfare Approval Decision",
+  "event": "Submit",
+  "condition": "",
+  "subject": "Welfare Approval Decision — {{ doc.patient }} ({{ doc.status }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Welfare Approval Decision</h3>\n  <p>A welfare approval decision has been submitted for the following case:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Reference</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.name }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Patient</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.patient }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Decision</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">\n        {% if doc.status == 'Approved' %}\n          <span style=\"color: #27ae60; font-weight: bold;\">{{ doc.status }}</span>\n        {% elif doc.status == 'Rejected' %}\n          <span style=\"color: #e74c3c; font-weight: bold;\">{{ doc.status }}</span>\n        {% else %}\n          <span style=\"font-weight: bold;\">{{ doc.status }}</span>\n        {% endif %}\n      </td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Amount</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.fmt_money(doc.amount) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.formatdate(doc.date) }}</td>\n    </tr>\n    {% if doc.description %}\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Description</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.description }}</td>\n    </tr>\n    {% endif %}\n  </table>\n  <p>Please proceed with the next steps based on this decision. If approved, coordinate with the billing department for subsidy application.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_role": "Welfare Officer"
+    },
+    {
+      "receiver_by_role": "Accounts Manager"
+    }
+  ],
+  "enabled": 1
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Discharge Summary Notification",
+  "doctype": "Notification",
+  "document_type": "Discharge Summary",
+  "event": "Submit",
+  "condition": "",
+  "subject": "Discharge Summary — {{ doc.patient_name }} ({{ frappe.utils.formatdate(doc.discharge_date) }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Discharge Summary</h3>\n  <p>Dear {{ doc.patient_name }},</p>\n  <p>Your discharge summary has been finalized. Below is a summary of your hospital stay.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Discharge Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.format_datetime(doc.discharge_date) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Discharge Type</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.discharge_type }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Attending Physician</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.practitioner }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Final Diagnosis</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.final_diagnosis or '-' }}</td>\n    </tr>\n  </table>\n  {% if doc.discharge_medications %}\n  <div style=\"background: #eaf7ea; border: 1px solid #27ae60; padding: 12px; border-radius: 4px; margin: 16px 0;\">\n    <strong>Discharge Medications:</strong><br>{{ doc.discharge_medications }}\n  </div>\n  {% endif %}\n  {% if doc.follow_up_instructions %}\n  <div style=\"background: #eaf2f8; border: 1px solid #2980b9; padding: 12px; border-radius: 4px; margin: 16px 0;\">\n    <strong>Follow-Up Instructions:</strong><br>{{ doc.follow_up_instructions }}\n  </div>\n  {% endif %}\n  {% if doc.follow_up_date %}\n  <p><strong>Follow-up appointment:</strong> {{ frappe.utils.formatdate(doc.follow_up_date) }}</p>\n  {% endif %}\n  <p style=\"color: #7f8c8d; font-size: 12px;\">Please contact the hospital if you experience any worsening symptoms or have questions about your discharge instructions.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

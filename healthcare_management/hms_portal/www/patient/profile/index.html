@@ -1,0 +1,97 @@
+{% extends "templates/web.html" %}
+{% block title %}My Profile{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>My Profile</h2>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form id="profile-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" id="full_name" value="{{ patient.full_name or '' }}" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Patient ID</label>
+                                <input type="text" class="form-control" value="{{ patient.name }}" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label>Gender</label>
+                                <input type="text" class="form-control" value="{{ patient.gender or '-' }}" readonly>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Date of Birth</label>
+                                <input type="text" class="form-control" value="{{ patient.dob or '-' }}" readonly>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Blood Group</label>
+                                <input type="text" class="form-control" value="{{ patient.blood_group or '-' }}" readonly>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5>Contact Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Mobile</label>
+                                <input type="text" class="form-control" id="mobile" value="{{ patient.mobile or '' }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Email</label>
+                                <input type="email" class="form-control" id="email" value="{{ patient.email or '' }}">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Address</label>
+                            <textarea class="form-control" id="address" rows="2">{{ patient.address or '' }}</textarea>
+                        </div>
+                        <hr>
+                        <h5>Emergency Contact</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="emergency_contact_name" value="{{ patient.emergency_contact_name or '' }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" id="emergency_contact_phone" value="{{ patient.emergency_contact_phone or '' }}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="{{ patient.image or '/assets/frappe/images/default-avatar.png' }}" class="rounded-circle mb-3" style="width:100px;height:100px;object-fit:cover">
+                    <h5>{{ patient.full_name or '' }}</h5>
+                    <p class="text-muted">{{ patient.name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('profile-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    frappe.call({
+        method: 'healthcare_management.hms_portal.api.portal.update_patient_profile',
+        args: {
+            mobile: document.getElementById('mobile').value,
+            email: document.getElementById('email').value,
+            address: document.getElementById('address').value,
+            emergency_contact_name: document.getElementById('emergency_contact_name').value,
+            emergency_contact_phone: document.getElementById('emergency_contact_phone').value,
+        },
+        callback() {
+            frappe.msgprint('Profile updated successfully!');
+        }
+    });
+});
+</script>
+{% endblock %}

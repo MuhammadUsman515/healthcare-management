@@ -1,0 +1,16 @@
+{
+  "name": "Bill Generated Notification",
+  "doctype": "Notification",
+  "document_type": "POS Invoice",
+  "event": "Submit",
+  "condition": "",
+  "subject": "Invoice Generated — {{ doc.name }} ({{ frappe.utils.fmt_money(doc.grand_total) }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Invoice Generated</h3>\n  <p>Dear {{ doc.patient_name or doc.customer_name }},</p>\n  <p>An invoice has been generated for your recent visit.</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Invoice No.</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.name }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.formatdate(doc.posting_date) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Total Amount</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.fmt_money(doc.total_amount) }}</td>\n    </tr>\n    {% if doc.discount_amount %}\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Discount</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.fmt_money(doc.discount_amount) }}</td>\n    </tr>\n    {% endif %}\n    {% if doc.tax_amount %}\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Tax</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.fmt_money(doc.tax_amount) }}</td>\n    </tr>\n    {% endif %}\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Grand Total</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold; font-size: 16px;\">{{ frappe.utils.fmt_money(doc.grand_total) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Payment Mode</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.payment_mode }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Status</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.status }}</td>\n    </tr>\n  </table>\n  <p>Please retain this notification for your records. For billing queries, contact the accounts department.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

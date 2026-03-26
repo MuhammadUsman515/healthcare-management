@@ -1,0 +1,66 @@
+{% extends "templates/web.html" %}
+{% block title %}Lab Report Login{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">View Lab Report</h3>
+                    <p class="text-muted text-center">Enter your report number and registered mobile/CNIC to view your lab results.</p>
+                    <form id="report-login-form">
+                        <div class="form-group mb-3">
+                            <label>Report Number</label>
+                            <input type="text" class="form-control" id="report_number" placeholder="e.g. HLC-LAB-2026-00001" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Mobile Number or CNIC</label>
+                            <input type="text" class="form-control" id="patient_identifier" placeholder="03XX-XXXXXXX or XXXXX-XXXXXXX-X" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">View Report</button>
+                    </form>
+                    <div id="report-result" class="mt-4" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('report-login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let report_num = document.getElementById('report_number').value;
+    let identifier = document.getElementById('patient_identifier').value;
+
+    frappe.call({
+        method: 'healthcare_management.hms_portal.api.portal.get_lab_report',
+        args: { report_number: report_num, patient_identifier: identifier },
+        callback(r) {
+            let div = document.getElementById('report-result');
+            div.style.display = 'block';
+            if (r.message && r.message.success) {
+                let rpt = r.message.report;
+                div.innerHTML = `
+                    <div class="alert alert-success">Report found!</div>
+                    <table class="table table-bordered">
+                        <tr><td><strong>Patient</strong></td><td>${rpt.patient_name}</td></tr>
+                        <tr><td><strong>Test</strong></td><td>${rpt.test_name}</td></tr>
+                        <tr><td><strong>Result</strong></td><td>${rpt.result_value || '-'} ${rpt.result_unit || ''}</td></tr>
+                        <tr><td><strong>Normal Range</strong></td><td>${rpt.normal_range || '-'}</td></tr>
+                        <tr><td><strong>Status</strong></td><td><span class="${rpt.result_status === 'Critical' ? 'text-danger font-weight-bold' : rpt.result_status === 'Abnormal' ? 'text-warning' : ''}">${rpt.result_status || '-'}</span></td></tr>
+                        <tr><td><strong>Date</strong></td><td>${rpt.order_date || '-'}</td></tr>
+                    </table>
+                    <a href="/api/method/frappe.utils.print_format.download_pdf?doctype=Lab Test&name=${rpt.name}&format=Lab Report Print" class="btn btn-outline-primary" target="_blank">Download PDF</a>
+                `;
+            } else {
+                div.innerHTML = `<div class="alert alert-danger">${r.message && r.message.error || 'Report not found. Please check your details.'}</div>`;
+            }
+        },
+        error() {
+            let div = document.getElementById('report-result');
+            div.style.display = 'block';
+            div.innerHTML = '<div class="alert alert-danger">Error fetching report. Please try again.</div>';
+        }
+    });
+});
+</script>
+{% endblock %}

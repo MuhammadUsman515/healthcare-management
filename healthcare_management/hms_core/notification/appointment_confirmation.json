@@ -1,0 +1,16 @@
+{
+  "name": "Appointment Confirmation",
+  "doctype": "Notification",
+  "document_type": "Appointment",
+  "event": "New",
+  "condition": "doc.status == 'Scheduled'",
+  "subject": "Appointment Confirmed — {{ doc.appointment_date }} at {{ doc.appointment_time }}",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h3 style=\"color: #2c3e50;\">Appointment Confirmation</h3>\n  <p>Dear {{ doc.patient_name }},</p>\n  <p>Your appointment has been confirmed with the following details:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Date</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.formatdate(doc.appointment_date) }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Time</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.appointment_time }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Doctor</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.practitioner_name }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Department</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.department }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: bold;\">Token Number</td>\n      <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.token_number or '-' }}</td>\n    </tr>\n  </table>\n  <p>Please arrive at least 15 minutes before your scheduled time. Bring your identification documents and any relevant medical records.</p>\n  <p style=\"color: #7f8c8d; font-size: 12px;\">If you need to reschedule or cancel, please contact the facility as soon as possible.</p>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_document_field": "patient_email"
+    }
+  ],
+  "enabled": 1
+}

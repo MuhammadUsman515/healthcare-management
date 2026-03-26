@@ -1,0 +1,54 @@
+{% extends "templates/web.html" %}
+{% block title %}Insurance Panel{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>Insurance Panel Portal</h2>
+            <p class="text-muted">For insurance companies to manage claims, view pre-authorizations, and access settlement reports.</p>
+            {% if frappe.session.user != "Guest" %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5>Insurance Portal Dashboard</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Pending Claims</h6>
+                                    <div id="pending-count" class="h3 text-primary">--</div>
+                                    <a href="#claims" class="btn btn-sm btn-outline-primary">Review</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Pre-Authorizations</h6>
+                                    <div id="preauth-count" class="h3 text-warning">--</div>
+                                    <a href="#preauth" class="btn btn-sm btn-outline-warning">Review</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h6>Settlement Due</h6>
+                                    <div id="settlement-amount" class="h3 text-danger">--</div>
+                                    <a href="#settlement" class="btn btn-sm btn-outline-danger">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p>Please <a href="/login?redirect-to=/insurance-panel">log in</a> with your insurance company credentials.</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+{% block title %}My Prescriptions{% endblock %}
+{% block page_content %}
+<div class="container mt-5">
+    <h2>My Prescriptions</h2>
+    <div id="prescriptions-list" class="mt-3">
+        <p class="text-muted">Loading prescriptions...</p>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    frappe.call({
+        method: 'healthcare_management.hms_portal.api.portal.get_my_prescriptions',
+        callback(r) {
+            let rxs = r.message || [];
+            let container = document.getElementById('prescriptions-list');
+            if (!rxs.length) {
+                container.innerHTML = '<p class="text-muted">No prescriptions found.</p>';
+                return;
+            }
+            container.innerHTML = '<table class="table table-hover"><thead><tr><th>Date</th><th>Prescription #</th><th>Doctor</th><th>Status</th></tr></thead><tbody>' +
+                rxs.map(rx => {
+                    let badge = {'Active':'success','Fulfilled':'primary','Partially Fulfilled':'warning','Cancelled':'secondary'}[rx.status] || 'dark';
+                    return `<tr><td>${rx.prescription_date}</td><td>${rx.name}</td><td>${rx.practitioner || '-'}</td><td><span class="badge badge-${badge}">${rx.status || '-'}</span></td></tr>`;
+                }).join('') +
+                '</tbody></table>';
+        }
+    });
+});
+</script>
+{% endblock %}

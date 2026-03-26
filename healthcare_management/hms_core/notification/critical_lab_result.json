@@ -1,0 +1,20 @@
+{
+  "name": "Critical Lab Result Alert",
+  "doctype": "Notification",
+  "document_type": "Result Authorization",
+  "event": "Value Change",
+  "value_changed": "result_status",
+  "condition": "doc.result_status == 'Critical'",
+  "subject": "CRITICAL LAB RESULT — {{ doc.patient_name }} ({{ doc.lab_test }})",
+  "message": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <div style=\"background: #e74c3c; color: white; padding: 12px 16px; border-radius: 4px 4px 0 0;\">\n    <h3 style=\"margin: 0;\">CRITICAL VALUE ALERT</h3>\n  </div>\n  <div style=\"border: 2px solid #e74c3c; border-top: none; padding: 16px; border-radius: 0 0 4px 4px;\">\n    <p><strong>Immediate clinical attention is required.</strong></p>\n    <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Patient</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.patient_name }} ({{ doc.patient }})</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Lab Test</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.lab_test }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Result Value</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;\">{{ doc.result_value }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Authorized By</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.authorized_by }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Date/Time</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ frappe.utils.format_datetime(doc.authorization_datetime) }}</td>\n      </tr>\n      {% if doc.remarks %}\n      <tr>\n        <td style=\"padding: 8px; border: 1px solid #ddd; background: #fdf2f2; font-weight: bold;\">Remarks</td>\n        <td style=\"padding: 8px; border: 1px solid #ddd;\">{{ doc.remarks }}</td>\n      </tr>\n      {% endif %}\n    </table>\n    <p style=\"color: #e74c3c; font-weight: bold;\">Please contact the treating physician immediately and document the notification in the patient record.</p>\n  </div>\n</div>",
+  "channel": "Email",
+  "recipients": [
+    {
+      "receiver_by_role": "Laboratory Manager"
+    },
+    {
+      "receiver_by_role": "Physician"
+    }
+  ],
+  "enabled": 1
+}
