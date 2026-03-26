@@ -1,0 +1,10 @@
+{
+  "name": "Welfare Committee Console",
+  "module": "HMS Revenue",
+  "doctype": "Page",
+  "page_name": "welfare-committee-console",
+  "title": "Welfare Committee Console",
+  "icon": "heart",
+  "standard": "Yes",
+  "roles": [{"role": "Welfare Officer"}, {"role": "Welfare Committee"}]
+}

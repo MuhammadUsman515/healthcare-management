@@ -1,0 +1,10 @@
+{
+  "name": "Cashier Counter",
+  "module": "HMS Revenue",
+  "doctype": "Page",
+  "page_name": "cashier-counter",
+  "title": "Cashier Counter",
+  "icon": "income",
+  "standard": "Yes",
+  "roles": [{"role": "Cashier"}]
+}

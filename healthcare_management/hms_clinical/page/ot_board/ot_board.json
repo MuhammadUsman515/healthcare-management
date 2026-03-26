@@ -1,0 +1,10 @@
+{
+  "name": "OT Board",
+  "module": "HMS Clinical",
+  "doctype": "Page",
+  "page_name": "ot-board",
+  "title": "OT Board",
+  "icon": "tool",
+  "standard": "Yes",
+  "roles": [{"role": "Physician"}, {"role": "Nurse"}, {"role": "Healthcare Administrator"}]
+}

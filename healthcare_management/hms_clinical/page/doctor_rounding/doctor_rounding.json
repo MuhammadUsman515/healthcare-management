@@ -1,0 +1,10 @@
+{
+  "name": "Doctor Rounding",
+  "module": "HMS Clinical",
+  "doctype": "Page",
+  "page_name": "doctor-rounding",
+  "title": "Doctor Rounding",
+  "icon": "heart",
+  "standard": "Yes",
+  "roles": [{"role": "Physician"}]
+}
