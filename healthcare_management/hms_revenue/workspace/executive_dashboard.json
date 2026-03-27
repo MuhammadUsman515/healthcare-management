@@ -9,7 +9,7 @@
   "module": "HMS Revenue",
   "label": "Executive Dashboard",
   "title": "Executive Dashboard",
-  "icon": "chart",
+  "icon": "dashboard",
   "indicator_color": "",
   "is_standard": 1,
   "public": 1,
@@ -18,8 +18,12 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Healthcare Administrator"},
-    {"role": "Hospital Admin"}
+    {
+      "role": "Healthcare Administrator"
+    },
+    {
+      "role": "Hospital Admin"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Executive Command Center\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Patients\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Practitioners\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Current Admissions\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Claims\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Operations\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patients\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Practitioners\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Revenue\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Cases\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Financial Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Revenue by Specialty\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Revenue Collection\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outstanding Receivables\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Claim Denial Analysis\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Admission Discharge Census\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bed Occupancy Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Productivity\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Diagnosis Frequency\",\"col\":4}}]",
   "links": [
@@ -336,5 +340,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

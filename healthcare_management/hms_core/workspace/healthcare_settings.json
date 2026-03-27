@@ -18,7 +18,9 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Healthcare Administrator"}
+    {
+      "role": "Healthcare Administrator"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Settings\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Organization\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branches\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Departments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Units\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Infrastructure\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Campus\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Buildings\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floors\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Configuration\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Holiday Lists\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift Types\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cost Centers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Price Lists\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tax Templates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Units of Measure\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Items\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Payers & Insurance\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Insurance Providers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"TPAs\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payers\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Coverage Plans\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel Contracts\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel Access Profiles\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Security & Audit\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role Profiles\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Session Policy\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFA Policy\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"External Access\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Access Logs\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Audit Exceptions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consent Records\",\"col\":4}}]",
   "links": [
@@ -539,5 +541,6 @@
     }
   ],
   "number_cards": [],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

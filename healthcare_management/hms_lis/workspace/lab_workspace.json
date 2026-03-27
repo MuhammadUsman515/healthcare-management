@@ -9,7 +9,7 @@
   "module": "HMS LIS",
   "label": "Laboratory",
   "title": "Laboratory",
-  "icon": "tool",
+  "icon": "flask",
   "indicator_color": "",
   "is_standard": 1,
   "public": 1,
@@ -18,8 +18,12 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Lab Technician"},
-    {"role": "Lab Supervisor"}
+    {
+      "role": "Lab Technician"
+    },
+    {
+      "role": "Lab Supervisor"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Laboratory Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Lab Orders\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Samples to Collect\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Tests in Progress\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Authorization\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Workflow\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Collection\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Tests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Result Authorization\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Workbench\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Setup & QC\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Test Templates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reference Ranges\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Control\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Containers\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Critical Values Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Turnaround Time\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample Rejection Rate\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Test Volume by Department\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Unauthorized Results Aging\",\"col\":4}}]",
   "links": [
@@ -344,5 +348,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

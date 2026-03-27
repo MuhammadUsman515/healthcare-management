@@ -18,8 +18,12 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Healthcare Administrator"},
-    {"role": "Hospital Admin"}
+    {
+      "role": "Healthcare Administrator"
+    },
+    {
+      "role": "Hospital Admin"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Healthcare Management System\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Patients\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Appointments\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Admissions\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Lab Orders\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patients\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Encounters\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Practitioners\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Laboratory\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Tests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Result Authorization\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drug Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fulfillment\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Revenue\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Billing\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receipts\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payments\",\"col\":4}}]",
   "links": [
@@ -267,5 +271,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

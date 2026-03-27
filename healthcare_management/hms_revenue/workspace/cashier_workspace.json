@@ -9,7 +9,7 @@
   "module": "HMS Revenue",
   "label": "Cashier",
   "title": "Cashier",
-  "icon": "income",
+  "icon": "payment",
   "indicator_color": "",
   "is_standard": 1,
   "public": 1,
@@ -18,7 +18,9 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Cashier"}
+    {
+      "role": "Cashier"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Cashier Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Bills\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Receipts\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Deposits\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Refunds\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Billing\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bills\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Provisional Bills\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receipts\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cashier Counter\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Payments\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entries\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deposits\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Refunds\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Credit Notes\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Insurance\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Claim Submissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pre-Auth Requests\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Revenue Collection\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outstanding Receivables\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discount Analysis\",\"col\":4}}]",
   "links": [
@@ -313,5 +315,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

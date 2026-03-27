@@ -9,7 +9,7 @@
   "module": "HMS Clinical",
   "label": "Doctor Panel",
   "title": "Doctor Panel",
-  "icon": "heart",
+  "icon": "stethoscope",
   "indicator_color": "",
   "is_standard": 1,
   "public": 1,
@@ -18,7 +18,9 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Physician"}
+    {
+      "role": "Physician"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Doctor Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Appointments Today\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Encounters\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Inpatients\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Clinical\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Appointments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Encounters\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prescriptions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lab Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IPD Admissions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Rounding\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Orders & Notes\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedure Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Referral Orders\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clinical Notes\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Discharge Summaries\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Diagnosis Frequency\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor Productivity\",\"col\":4}}]",
   "links": [
@@ -287,5 +289,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

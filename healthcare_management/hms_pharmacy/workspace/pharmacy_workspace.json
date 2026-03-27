@@ -9,7 +9,7 @@
   "module": "HMS Pharmacy",
   "label": "Pharmacy",
   "title": "Pharmacy",
-  "icon": "list",
+  "icon": "pill",
   "indicator_color": "",
   "is_standard": 1,
   "public": 1,
@@ -18,7 +18,9 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Pharmacist"}
+    {
+      "role": "Pharmacist"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Pharmacy Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Dispense\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Fulfillment\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Expiring Soon\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's POS\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Dispensing\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Slips\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Console\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fulfillment\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dispense Queue\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POS Invoice\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Inventory\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drug Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Batches\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Goods Receipt\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Adjustment\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Transfer\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pharmacy Stores\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Setup\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Generics\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Brands\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dosage Forms\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Suppliers\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Expiry Forecast\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Controlled Drug Audit\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fast Slow Moving Items\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prescription Dispense Conversion\",\"col\":4}}]",
   "links": [
@@ -416,5 +418,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

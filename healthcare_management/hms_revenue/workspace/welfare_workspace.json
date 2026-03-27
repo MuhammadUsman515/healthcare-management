@@ -18,8 +18,12 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Welfare Officer"},
-    {"role": "Welfare Committee"}
+    {
+      "role": "Welfare Officer"
+    },
+    {
+      "role": "Welfare Committee"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Welfare Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Welfare Cases\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Approvals\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Donations\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Funds\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Cases & Approvals\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Cases\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Approval Requests\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Approval Decisions\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Social Assessments\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Committee Console\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Donations & Funds\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donations\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donors\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Funds\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Utilization Certificates\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Disbursements\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Donation Utilization\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fund Balance Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Welfare Case Aging\",\"col\":4}}]",
   "links": [
@@ -336,5 +340,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }

@@ -18,8 +18,12 @@
   "parent_page": "",
   "restrict_to_domain": "",
   "roles": [
-    {"role": "Nurse"},
-    {"role": "Healthcare Administrator"}
+    {
+      "role": "Nurse"
+    },
+    {
+      "role": "Healthcare Administrator"
+    }
   ],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Reception Dashboard\",\"col\":12,\"level\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Appointments\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Waiting Patients\",\"col\":4}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Registrations Today\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Actions\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Patient\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointments\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Check In\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visits\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Queue Board\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Admission Requests\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12,\"level\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Registration Summary\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appointment Load by Doctor\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Waiting Time Analysis\",\"col\":4}}]",
   "links": [
@@ -231,5 +235,6 @@
       "type": "Document Type"
     }
   ],
-  "charts": []
+  "charts": [],
+  "category": "Modules"
 }
